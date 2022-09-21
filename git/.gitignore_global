@@ -1,0 +1,20 @@
+# Mac
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# JetBrains
+.idea/
+
+# VS code
+.vscode/*
+
+# vi
+*~
+
+# python
+*.pyc
+
+# General
+log/
+*.log
