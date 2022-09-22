@@ -85,8 +85,6 @@ bindkey '^E' end-of-line
 # Autojump for Homebrew Apple Silicon
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
-# Alias to edit zsh config
-alias zshconfig="vim ~/.zshrc"
 alias c="clear"
 
 # Configuration for zsh-autosuggestions
@@ -95,8 +93,9 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
 # NVM setting
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
