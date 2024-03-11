@@ -51,8 +51,9 @@ HIST_STAMPS="yyyy-mm-dd"
 # Homebrew Apple Silicon
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # Homebrew settings
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -99,3 +100,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+# pnpm
+export PNPM_HOME="/Users/soros/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

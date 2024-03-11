@@ -9,3 +9,6 @@
 	rebase = false
 [include]
   path = ~/.gitconfig_local
+# Enforce SSH
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

@@ -18,3 +18,6 @@
 # General
 log/
 *.log
+
+# nodejs
+node_modules/
