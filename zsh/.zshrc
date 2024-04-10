@@ -98,14 +98,6 @@ export NVM_DIR="$HOME/.nvm"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-
-# pnpm
-export PNPM_HOME="/Users/soros/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -120,4 +112,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# goenv setting
+eval "$(goenv init -)"
+# export PATH="$GOROOT/bin:$PATH"
+# export PATH="$PATH:$GOPATH/bin"
+# goenv end
 
