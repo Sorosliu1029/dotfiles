@@ -21,3 +21,6 @@ log/
 
 # nodejs
 node_modules/
+
+# ipython
+.ipynb_checkpoints/
