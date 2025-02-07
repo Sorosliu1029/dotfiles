@@ -109,3 +109,4 @@ zstd
 docker
 font-fira-code
 mactex
+slack
