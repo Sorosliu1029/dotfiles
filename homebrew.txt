@@ -1,6 +1,7 @@
 autojump
 ca-certificates
 cairo
+cowsay
 fontconfig
 freetype
 fribidi
@@ -108,5 +109,6 @@ z3
 zstd
 docker
 font-fira-code
+logseq
 mactex
 slack
