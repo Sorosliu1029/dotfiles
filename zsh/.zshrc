@@ -127,7 +127,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# GHCup, main installer for the general purpose language Haskell
+[ -f "/Users/soros/.ghcup/env" ] && . "/Users/soros/.ghcup/env" # ghcup-env
+# GHCup end
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # sdkman end
+
