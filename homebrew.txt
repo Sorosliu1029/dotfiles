@@ -2,7 +2,9 @@ autojump
 ca-certificates
 cairo
 cowsay
+datamash
 fontconfig
+fpp
 freetype
 fribidi
 fzf
@@ -24,6 +26,7 @@ icu4c@76
 isl
 ispc
 jbig2dec
+jid
 jpeg-turbo
 jq
 julia
@@ -80,16 +83,19 @@ openlibm
 openssl@3
 p11-kit
 p7zip
+pandoc
 pango
 pcre2
 pinentry
 pinentry-mac
 pixman
 pnpm
+pstree
 python-packaging
 python@3.12
 python@3.13
 readline
+ripgrep
 sqlite
 suite-sparse
 tesseract
