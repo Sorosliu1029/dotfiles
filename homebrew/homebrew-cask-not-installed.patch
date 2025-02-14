@@ -1,0 +1,41 @@
+diff --git a/homebrew/homebrew.txt b/homebrew/homebrew.txt
+index 359cad4..4a37858 100644
+--- a/homebrew/homebrew.txt
++++ b/homebrew/homebrew.txt
+@@ -113,7 +113,9 @@ xorgproto
+ xz
+ z3
+ zstd
++1password
+ appcleaner
++arc
+ bartender
+ calibre
+ chatgpt
+@@ -123,19 +125,26 @@ dash
+ discord
+ docker
+ dropbox
++eudic
+ font-fira-code
+ google-chrome
+ iina
++iterm2
+ itermai
+ logseq
+ mactex
+ nosqlbooster-for-mongodb
++nutstore
+ pdf-expert
+ rapidapi
++raycast
+ readdle-spark
+ slack
+ spotify
+ stash
++telegram
+ the-unarchiver
+ ticktick
++visual-studio-code
++wechat
+ zoom
