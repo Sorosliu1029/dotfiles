@@ -1,41 +1,44 @@
-diff --git a/homebrew/homebrew.txt b/homebrew/homebrew.txt
-index 359cad4..4a37858 100644
---- a/homebrew/homebrew.txt
-+++ b/homebrew/homebrew.txt
-@@ -113,7 +113,9 @@ xorgproto
- xz
- z3
- zstd
-+1password
- appcleaner
-+arc
- bartender
- calibre
- chatgpt
-@@ -123,19 +125,26 @@ dash
- discord
- docker
- dropbox
-+eudic
- font-fira-code
- google-chrome
- iina
-+iterm2
- itermai
- logseq
- mactex
- nosqlbooster-for-mongodb
-+nutstore
- pdf-expert
- rapidapi
-+raycast
- readdle-spark
- slack
- spotify
- stash
-+telegram
- the-unarchiver
- ticktick
-+visual-studio-code
-+wechat
- zoom
+diff --git a/homebrew/Brewfile b/homebrew/Brewfile
+index 34794dd..d56187f 100644
+--- a/homebrew/Brewfile
++++ b/homebrew/Brewfile
+@@ -30,7 +30,9 @@ brew "tmux"
+ brew "tree"
+ brew "watch"
+ brew "wget"
++cask "1password"
+ cask "appcleaner"
++cask "arc"
+ cask "bartender"
+ cask "calibre"
+ cask "chatgpt"
+@@ -40,22 +42,29 @@ cask "dash"
+ cask "discord"
+ cask "docker"
+ cask "dropbox"
++cask "eudic"
+ cask "font-fira-code"
+ cask "google-chrome"
+ cask "iina"
++cask "iterm2"
+ cask "intellij-idea-ce"
+ cask "itermai"
+ cask "logseq"
+ cask "mactex"
+ cask "nosqlbooster-for-mongodb"
++cask "nutstore"
+ cask "pdf-expert"
+ cask "rapidapi"
++cask "raycast"
+ cask "readdle-spark"
+ cask "slack"
+ cask "spotify"
+ cask "stash"
++cask "telegram"
+ cask "the-unarchiver"
+ cask "ticktick"
++cask "visual-studio-code"
++cask "wechat"
+ cask "zoom"
+ vscode "aaron-bond.better-comments"
+ vscode "anbuselvan.vscode-symlink"
