@@ -81,7 +81,7 @@ export LC_ALL=$LANG
 export LC_CTYPE=$LANG
 
 # Editor setting
-export EDITOR='vim'
+export EDITOR='nvim'
 # vim style key binding
 bindkey -v
 bindkey '^A' beginning-of-line
