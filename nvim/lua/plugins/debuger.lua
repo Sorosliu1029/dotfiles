@@ -6,7 +6,7 @@ return {
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
-      dapui.setup()
+			dapui.setup()
 
 			vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
 			vim.keymap.set("n", "<Leader>db", dap.set_breakpoint, {})
@@ -25,7 +25,7 @@ return {
 				dapui.close()
 			end
 
-      -- setup for new added dap
+			-- setup for new added dap
 		end,
 	},
 	{
@@ -39,5 +39,11 @@ return {
 				library = { "nvim-dap-ui" },
 			})
 		end,
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+		},
 	},
 }

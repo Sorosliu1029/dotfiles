@@ -2,6 +2,7 @@ vim.cmd("set encoding=utf-8")
 
 -- appearance related
 vim.cmd("set number")
+vim.cmd("set relativenumber")
 vim.cmd("set ruler")
 vim.cmd("set cursorline")
 vim.cmd("set cursorcolumn")

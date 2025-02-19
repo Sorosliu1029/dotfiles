@@ -48,12 +48,8 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-# Homebrew Apple Silicon
+# Homebrew Apple Silicon, place before `plugins`
 eval "$(/opt/homebrew/bin/brew shellenv)"
-# Homebrew settings
-export HOMEBREW_NO_ENV_HINTS=true
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -82,23 +78,37 @@ export LC_CTYPE=$LANG
 
 # Editor setting
 export EDITOR='nvim'
+
 # vim style key binding
 bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
-# Autojump for Homebrew Apple Silicon
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
+# custom alias
 alias c="clear"
+alias gs="gst"
+alias lg="lazygit"
+alias vi="nvim"
+alias vim="nvim"
 
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Homebrew settings
+export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+# Homebrew end
 
-# >>> conda initialize >>>
+# Autojump
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+# autojump end
+
+# p10k: To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# p10k end
+
+# conda initialize
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
@@ -111,7 +121,7 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
+# conda end
 
 # goenv setting
 eval "$(goenv init -)"
