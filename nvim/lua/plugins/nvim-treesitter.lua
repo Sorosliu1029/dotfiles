@@ -43,12 +43,18 @@ return {
 					"xml",
 					"markdown",
 					"markdown_inline",
+					"regex",
 				},
 				auto_install = true,
 				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
+
+			-- folding, ref: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#folding
+			vim.wo.foldmethod = "expr"
+			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+			vim.wo.foldminlines = 5
 		end,
 	},
 	{
