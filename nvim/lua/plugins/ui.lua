@@ -54,6 +54,14 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
+			require("notify").setup({
+				-- disable focusing on notify window
+				-- ref: https://github.com/rcarriga/nvim-notify/issues/183#issuecomment-1464892813
+				on_open = function(win)
+					vim.api.nvim_win_set_config(win, { focusable = false })
+				end,
+			})
+
 			vim.notify = require("notify")
 		end,
 	},

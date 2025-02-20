@@ -9,7 +9,24 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      enable_git_status = true,
+      close_if_last_window = true,
+      filesystem = {
+        window = {
+          mappings = {
+            ["o"] = "system_open",
+          },
+        },
+      },
+      commands = {
+        system_open = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+          -- macOs: open file in default application in the background.
+          vim.fn.jobstart({ "open", path }, { detach = true })
+          -- Linux: open file in default application
+          -- vim.fn.jobstart({ "xdg-open", path }, { detach = true })
+        end,
+      },
     })
 
     vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem reveal left<CR>")
