@@ -1,0 +1,9 @@
+promptToReturnFromSubprocess: false
+
+# Keybinding
+keybinding:
+  universal:
+    pushFiles: p # original is P
+    pullFiles: P # original is p
+  branches:
+    pushTag: p # original is P

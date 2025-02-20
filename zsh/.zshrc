@@ -141,6 +141,10 @@ esac
 [ -f "/Users/soros/.ghcup/env" ] && . "/Users/soros/.ghcup/env" # ghcup-env
 # GHCup end
 
+# Lazygit config folder
+export XDG_CONFIG_HOME="$HOME/.config"
+# Lazygit end
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
