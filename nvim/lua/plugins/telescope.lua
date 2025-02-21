@@ -7,7 +7,7 @@ return {
       require("telescope").setup({
         defaults = {
           file_ignore_patterns = {
-            ".git",
+            ".git/",
             "node_modules",
           },
         },
@@ -19,6 +19,7 @@ return {
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
       vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" }) -- intentional duplicate
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+      vim.keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", { desc = "Telescope notify" })
     end,
   },
   {
