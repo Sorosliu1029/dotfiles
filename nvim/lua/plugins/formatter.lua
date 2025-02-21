@@ -17,6 +17,7 @@ return {
 					"black",
 					"isort",
 					"cspell",
+          "google-java-format",
 				},
 				automatic_installation = false,
 				handlers = {},
