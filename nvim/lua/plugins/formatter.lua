@@ -17,7 +17,7 @@ return {
 					"black",
 					"isort",
 					"cspell",
-          "google-java-format",
+					"google-java-format",
 				},
 				automatic_installation = false,
 				handlers = {},
@@ -33,7 +33,10 @@ return {
 			local null_ls = require("null-ls")
 			null_ls.setup({
 				sources = {
-					null_ls.builtins.completion.spell,
+					-- Remove `Text`field from completion candidates
+					-- ref: https://www.reddit.com/r/neovim/comments/v2ifpb/text_fields_on_lsp_auto_completion/
+					-- null_ls.builtins.completion.spell,
+
 					require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
 				},
 			})
