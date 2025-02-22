@@ -129,9 +129,12 @@ return {
       "folke/noice.nvim",
     },
     init = function()
-      vim.keymap.set("n", "<leader>rn", ":IncRename ", { desc = "Incremental renaming" })
+      vim.keymap.set("n", "<leader>rn", function()
+        return ":IncRename " .. vim.fn.expand("<cword>")
+      end, { expr = true })
     end,
     config = function()
+      require("inc_rename").setup()
       require("noice").setup({
         presets = { inc_rename = true },
       })
