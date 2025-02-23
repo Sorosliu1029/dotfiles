@@ -158,6 +158,10 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("telescope").load_extension("noice")
+      require("noice").setup(opts)
+    end,
   },
   -- code context on top line
   {
