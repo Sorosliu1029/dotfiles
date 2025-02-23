@@ -7,10 +7,7 @@ return {
       local utils = require("auto-save.utils.data")
 
       local ignoreSaveFiletypes = { "TelescopePrompt", "gitcommit" }
-      if
-          fn.getbufvar(buf, "&modifiable") == 1
-          and utils.not_in(fn.getbufvar(buf, "&filetype"), ignoreSaveFiletypes)
-      then
+      if fn.getbufvar(buf, "&modifiable") == 1 and utils.not_in(fn.getbufvar(buf, "&filetype"), ignoreSaveFiletypes) then
         return true -- met condition(s), can save
       end
       return false -- can't save

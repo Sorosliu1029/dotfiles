@@ -4,5 +4,4 @@ return {
   opts = {
     minimumBufferNum = 2,
   },
-  config = true,
 }

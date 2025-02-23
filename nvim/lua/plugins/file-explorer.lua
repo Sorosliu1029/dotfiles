@@ -7,28 +7,27 @@ return {
     "MunifTanjim/nui.nvim",
     -- { "3rd/image.nvim", opts = {} }, -- Optional image support in preview window: See `# Preview Mode` for more information
   },
-  config = function()
-    require("neo-tree").setup({
-      close_if_last_window = true,
-      filesystem = {
-        window = {
-          mappings = {
-            ["o"] = "system_open",
-          },
+  init = function()
+    vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem reveal left<CR>", { desc = "Open file explorer" })
+  end,
+  opts = {
+    close_if_last_window = true,
+    filesystem = {
+      window = {
+        mappings = {
+          ["o"] = "system_open",
         },
       },
-      commands = {
-        system_open = function(state)
-          local node = state.tree:get_node()
-          local path = node:get_id()
-          -- macOs: open file in default application in the background.
-          vim.fn.jobstart({ "open", path }, { detach = true })
-          -- Linux: open file in default application
-          -- vim.fn.jobstart({ "xdg-open", path }, { detach = true })
-        end,
-      },
-    })
-
-    vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem reveal left<CR>")
-  end,
+    },
+    commands = {
+      system_open = function(state)
+        local node = state.tree:get_node()
+        local path = node:get_id()
+        -- macOs: open file in default application in the background.
+        vim.fn.jobstart({ "open", path }, { detach = true })
+        -- Linux: open file in default application
+        -- vim.fn.jobstart({ "xdg-open", path }, { detach = true })
+      end,
+    },
+  },
 }

@@ -7,9 +7,9 @@
 	<key>AlwaysOpenWindowAtStartup</key>
 	<true/>
 	<key>BracketedPasteMode</key>
-	<true/>
+	<false/>
 	<key>ConvertDosNewlines</key>
-	<true/>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -267,6 +267,8 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
+			<false/>
+			<key>Allow Paste Bracketing</key>
 			<false/>
 			<key>Allow modifyOtherKeys</key>
 			<false/>
@@ -1456,6 +1458,8 @@
 		</dict>
 	</dict>
 	<key>PromptOnQuit</key>
+	<false/>
+	<key>RemoveControlCodes</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
 	<false/>

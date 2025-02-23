@@ -5,4 +5,4 @@ require("vim-options")
 require("vim-patch")
 
 -- lazy.nvim
-require("config.lazy")
+require("configs.lazy")

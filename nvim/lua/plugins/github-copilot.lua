@@ -3,9 +3,7 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
-    config = function()
-      require("copilot").setup({})
-    end,
+    opts = {},
   },
   {
     "jonahgoldwastaken/copilot-status.nvim",
@@ -15,17 +13,15 @@ return {
     },
     lazy = true,
     event = "BufReadPost",
-    config = function()
-      require("copilot_status").setup({
-        icons = {
-          idle = " ",
-          error = " ",
-          offline = " ",
-          warning = "𥉉 ",
-          loading = " ",
-        },
-        debug = false,
-      })
-    end,
+    opts = {
+      icons = {
+        idle = " ",
+        error = " ",
+        offline = " ",
+        warning = "𥉉 ",
+        loading = " ",
+      },
+      debug = false,
+    },
   },
 }

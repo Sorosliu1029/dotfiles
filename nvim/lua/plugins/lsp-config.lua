@@ -1,56 +1,34 @@
 return {
   {
     "williamboman/mason.nvim",
-    config = function()
-      require("mason").setup()
-    end,
+    opts = {},
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "ast_grep",
-          "clangd",
-          "jedi_language_server",
-          "gopls",
-          "bashls",
-          "harper_ls",
-          "cmake",
-          "cssls",
-          "tailwindcss",
-          "dockerls",
-          "hls",
-          "eslint",
-          "jdtls",
-          "ts_ls",
-          "jsonls",
-          "julials",
-          "textlsp",
-          "ltex",
-          "buf_ls",
-          "sqlls",
-          "grammarly",
-          "vimls",
-          "yamlls",
-          "pyright",
-        },
-      })
+    opts = function()
+      return { ensure_installed = require("configs.mason.packages").lsp }
     end,
   },
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({ capabilities = capabilities })
-      lspconfig.jdtls.setup({ capabilities = capabilities })
-
+    init = function()
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover to show symbol under cursor" })
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+    end,
+    config = function()
+      -- enable completion on lsp
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      local lspconfig = require("lspconfig")
+      -- local language_servers = require('configs.lsp.servers').to_setup
+      local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+      for _, ls in ipairs(language_servers) do
+        lspconfig[ls].setup({
+          capabilities = capabilities,
+          -- you can add other fields for setting up lsp server in this table
+        })
+      end
     end,
   },
   -- java lsp: jdtls

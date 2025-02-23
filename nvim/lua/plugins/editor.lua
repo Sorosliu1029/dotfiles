@@ -1,10 +1,9 @@
 return {
+  -- autopairs
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true,
-    -- use opts = {} for passing setup options
-    -- this is equivalent to setup({}) function
+    opts = {},
   },
   -- show color on #hex, color literal
   {
@@ -18,11 +17,11 @@ return {
   -- indenting
   {
     "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    opts = {},
     dependencies = {
       "HiPhish/rainbow-delimiters.nvim",
     },
+    main = "ibl",
+    opts = {},
     config = function()
       local highlight = {
         "RainbowRed",
@@ -60,11 +59,9 @@ return {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-      })
-    end,
+    opts = {
+      -- Configuration here, or leave empty to use defaults
+    },
   },
   -- fix nvim-surround not showing on which-key
   -- ref: https://github.com/kylechui/nvim-surround/issues/354#issuecomment-2571421653
@@ -74,11 +71,9 @@ return {
       "kylechui/nvim-surround",
       "folke/which-key.nvim",
     },
-    config = function()
-      require("surround-ui").setup({
-        root_key = "S",
-      })
-    end,
+    opts = {
+      root_key = "S",
+    },
   },
   -- highlight other uses of word under cursor
   {

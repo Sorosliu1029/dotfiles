@@ -6,19 +6,17 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
-  config = function()
-    require("neotest").setup({
-      adapters = {
-        -- see: https://github.com/nvim-neotest/neotest?tab=readme-ov-file#supported-runners
+  opts = {
+    adapters = {
+      -- see: https://github.com/nvim-neotest/neotest?tab=readme-ov-file#supported-runners
 
-        -- require("neotest-python")({
-        --   dap = { justMyCode = false },
-        -- }),
-        -- require("neotest-plenary"),
-        -- require("neotest-vim-test")({
-        --   ignore_file_types = { "python", "vim", "lua" },
-        -- }),
-      },
-    })
-  end,
+      -- require("neotest-python")({
+      --   dap = { justMyCode = false },
+      -- }),
+      -- require("neotest-plenary"),
+      -- require("neotest-vim-test")({
+      --   ignore_file_types = { "python", "vim", "lua" },
+      -- }),
+    },
+  },
 }
