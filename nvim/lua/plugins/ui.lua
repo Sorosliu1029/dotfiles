@@ -130,6 +130,32 @@ return {
           },
           opts = { skip = true },
         },
+
+        -- Hide `jdtls` lsp messages
+        -- ref: https://github.com/folke/noice.nvim/issues/511#issuecomment-1595272018
+        {
+          filter = {
+            event = "lsp",
+            kind = "progress",
+            cond = function(message)
+              local client = vim.tbl_get(message.opts, "progress", "client")
+              return client == "jdtls" -- skip jdtls progress
+            end,
+          },
+          opts = { skip = true },
+        },
+
+        -- always route 'AutoSave' message to bottom right corner
+        {
+          view = "mini",
+          filter = { event = "msg_show", find = "AutoSave:" },
+        },
+
+        -- always route any messages with more than 20 lines to the split view
+        {
+          view = "split",
+          filter = { event = "msg_show", min_height = 20 },
+        },
       },
     },
   },
