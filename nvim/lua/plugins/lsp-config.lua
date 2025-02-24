@@ -21,8 +21,7 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      -- local language_servers = require('configs.lsp.servers').to_setup
-      local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+      local language_servers = require("configs.lsp.servers").to_setup
       for _, ls in ipairs(language_servers) do
         lspconfig[ls].setup({
           capabilities = capabilities,
@@ -30,9 +29,5 @@ return {
         })
       end
     end,
-  },
-  -- java lsp: jdtls
-  {
-    "mfussenegger/nvim-jdtls",
   },
 }
