@@ -2,7 +2,7 @@ local M = {}
 
 M.to_setup = {
   "lua_ls",
-  "jdtls",
+  -- "jdtls", -- setup by 'nvim-java' plugin
 }
 
 return M

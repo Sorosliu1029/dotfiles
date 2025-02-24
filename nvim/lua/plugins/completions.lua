@@ -1,6 +1,19 @@
 return {
   {
     "hrsh7th/cmp-nvim-lsp",
+    config = function()
+      -- enable completion on lsp
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      local lspconfig = require("lspconfig")
+      local language_servers = require("configs.lsp.servers").to_setup
+      for _, ls in ipairs(language_servers) do
+        lspconfig[ls].setup({
+          capabilities = capabilities,
+          -- you can add other fields for setting up lsp server in this table
+        })
+      end
+    end,
   },
   {
     "hrsh7th/cmp-buffer",

@@ -16,18 +16,18 @@ return {
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
     end,
+  },
+  {
+    "nvim-java/nvim-java",
     config = function()
-      -- enable completion on lsp
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      local lspconfig = require("lspconfig")
-      local language_servers = require("configs.lsp.servers").to_setup
-      for _, ls in ipairs(language_servers) do
-        lspconfig[ls].setup({
-          capabilities = capabilities,
-          -- you can add other fields for setting up lsp server in this table
-        })
-      end
+      require("java").setup({
+        -- use nvim for simple java coding, otherwise IntelliJ plz
+        java_test = { enable = false },
+        java_debug_adapter = { enable = false },
+        spring_boot_tools = { enable = false },
+        notifications = { dap = false },
+      })
+      require("lspconfig").jdtls.setup({})
     end,
   },
 }
