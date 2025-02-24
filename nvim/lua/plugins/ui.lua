@@ -4,32 +4,11 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
-      -- copy from: https://github.com/folke/trouble.nvim?tab=readme-ov-file#statusline-component
-      local trouble = require("trouble")
-      local symbols = trouble.statusline({
-        mode = "lsp_document_symbols",
-        groups = {},
-        title = false,
-        filter = { range = true },
-        format = "{kind_icon}{symbol.name:Normal}",
-        -- The following line is needed to fix the background color
-        -- Set it to the lualine section you want to use
-        hl_group = "lualine_c_normal",
-      })
-
       return {
         options = {
-          theme = "dracula",
+          theme = "catppuccin",
         },
-
         sections = {
-          lualine_c = {
-            "filename",
-            {
-              symbols.get,
-              cond = symbols.has,
-            },
-          },
           lualine_x = {
             -- Show @recording messages
             -- ref: https://github.com/folke/noice.nvim/wiki/Configuration-Recipes#show-recording-messages
@@ -54,6 +33,15 @@ return {
             "filetype",
           },
         },
+        winbar = {
+          lualine_c = {
+            {
+              "navic",
+              color_correction = "static",
+              navic_opts = nil,
+            },
+          },
+        },
       }
     end,
   },
@@ -62,19 +50,22 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      options = {
-        separator_style = "padded_slant",
-        offsets = {
-          {
-            filetype = "neo-tree",
-            text = "File Explorer",
-            highlight = "Directory",
-            separator = true, -- use a "true" to enable the default, or set your own character
+    opts = function()
+      return {
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+        options = {
+          separator_style = "padded_slant",
+          offsets = {
+            {
+              filetype = "neo-tree",
+              text = "File Explorer",
+              highlight = "Directory",
+              separator = true, -- use a "true" to enable the default, or set your own character
+            },
           },
         },
-      },
-    },
+      }
+    end,
   },
   -- notification
   {
@@ -170,6 +161,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     opts = {
+      highlight = true,
       lsp = { auto_attach = true },
     },
   },
