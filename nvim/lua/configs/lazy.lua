@@ -23,10 +23,12 @@ require("lazy").setup({
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
-  rocks = {
-    enabled = true, -- required by "nvim-neorg/neorg"
+  install = { colorscheme = { "catppuccin" } },
+  checker = {
+    enabled = true,
+    notify = false,
+    frequency = 3600 * 24 * 7, -- check for updates every week
   },
+  change_detection = { notify = false },
+  rocks = { enabled = false },
 })
