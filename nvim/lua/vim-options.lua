@@ -6,6 +6,8 @@ vim.o.relativenumber = true
 vim.o.ruler = true
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
+vim.o.wrap = true
+vim.o.linebreak = true -- line break between words
 
 -- indent related
 vim.o.autoindent = true

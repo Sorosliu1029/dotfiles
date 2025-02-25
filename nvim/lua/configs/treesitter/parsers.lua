@@ -37,4 +37,5 @@ return {
   "markdown",
   "markdown_inline",
   "regex",
+  "norg",
 }
