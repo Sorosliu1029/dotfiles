@@ -12,9 +12,11 @@ return {
       })
     end,
   },
+  -- shows the context of the currently visible buffer contents
   {
     "nvim-treesitter/nvim-treesitter-context",
   },
+  -- Syntax aware text-objects
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     dependencies = {

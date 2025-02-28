@@ -49,7 +49,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin" },
     opts = function()
       return {
         highlights = require("catppuccin.groups.integrations.bufferline").get(),
