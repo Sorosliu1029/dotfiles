@@ -60,9 +60,6 @@ return {
 
           -- Completion
           --
-          -- Remove `Text`field from completion candidates
-          -- ref: https://www.reddit.com/r/neovim/comments/v2ifpb/text_fields_on_lsp_auto_completion/
-          -- null_ls.builtins.completion.spell,
 
           -- Formatting
           --
@@ -72,6 +69,10 @@ return {
           null_ls.builtins.formatting.isort,
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.formatting.stylua,
+
+          -- Diagnostic
+          --
+          null_ls.builtins.diagnostics.codespell,
         },
 
         on_attach = nil,

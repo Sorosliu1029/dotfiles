@@ -27,7 +27,12 @@ return {
         spring_boot_tools = { enable = false },
         notifications = { dap = false },
       })
-      require("lspconfig").jdtls.setup({})
+
+      -- enable completion on lsp
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      require("lspconfig").jdtls.setup({
+        capabilities = capabilities,
+      })
     end,
   },
 }
