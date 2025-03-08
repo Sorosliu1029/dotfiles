@@ -2,7 +2,7 @@ return {
   "folke/persistence.nvim",
   event = "BufReadPre", -- this will only start session saving when an actual file was opened
   init = function()
-    -- remove Neo-tree from resotre
+    -- remove Neo-tree from restore
     -- ref: https://github.com/folke/persistence.nvim/issues/80#issuecomment-2506424807
     vim.opt.sessionoptions:remove("blank")
 

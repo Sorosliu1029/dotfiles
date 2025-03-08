@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<Frhelper_Backup BackupFileVersion="2.0">
+	<Dicts>
+		<Item libid="-24" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-22" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-20" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-10" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="1" dark_style="0" />
+		<Item libid="-8" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-7" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-5" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-4" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-3" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-2" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="-1" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="1" expand="0" name="" char_conversion="0" enable_full_text="1" online_search_type="0" dark_style="0" />
+		<Item libid="20301" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/oln_wiki_cn.eudb" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="20303" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/oln_wiki_en.eudb" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="82199984" path="/Users/soros/Library/Eudb_en/240 Roots.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="192315983" path="/Users/soros/Library/Eudb_en/o2022k.1.mdd" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="337438984" path="/Users/soros/Library/Eudb_en/Macmillan English Dictionary for Advanced Learners.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="480366799" path="system_tts" visible="1" expand="0" name="" char_conversion="1" enable_full_text="0" online_search_type="0" dark_style="805649448" />
+		<Item libid="661040955" path="/Users/soros/Library/Eudb_en/Vocabulary.com Dictionary.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="932300634" path="/Users/soros/Library/Eudb_en/Oxford Collocations Dictionary for students of English 2nd.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1299133220" path="/Users/soros/Library/Eudb_en/Merriam-Webster's Vocabulary Builder.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1321621240" path="/Users/soros/Library/Eudb_en/[英-英] English Etymology (etymonline.com).mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1331641565" path="/Users/soros/Library/Eudb_en/韦氏高阶英汉双解词典.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1559491189" path="/Users/soros/Library/Eudb_en/CollinsCOBUILDOverhaul V 2-30.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1647992499" path="/Users/soros/Library/Eudb_en/OELDOnlineV1-51.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1700838731" path="/Users/soros/Library/Eudb_en/english词根词缀词频.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1865233761" path="/Users/soros/Library/Eudb_en/Oxford Advanced Learner's English-Chinese Dictionary 8th Edition.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1868820108" path="/Users/soros/Library/Eudb_en/o2022k.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="1951330282" path="/Users/soros/Library/Eudb_en/etym2023.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
+		<Item libid="2129894871" path="/Users/soros/Library/Eudb_en/LDOCE5++ V 1-35.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="1" online_search_type="0" dark_style="0" />
+	</Dicts>
+	<DictOrder>
+		<Item libid="2129894871" list_type="0" />
+		<Item libid="1331641565" list_type="0" />
+		<Item libid="1700838731" list_type="0" />
+		<Item libid="1647992499" list_type="0" />
+		<Item libid="1865233761" list_type="0" />
+		<Item libid="661040955" list_type="0" />
+		<Item libid="1868820108" list_type="0" />
+		<Item libid="-1" list_type="0" />
+		<Item libid="-10" list_type="0" />
+		<Item libid="192315983" list_type="2" />
+		<Item libid="928587764" list_type="2" />
+		<Item libid="569738332" list_type="2" />
+		<Item libid="480366799" list_type="2" />
+		<Item libid="154061052" list_type="2" />
+		<Item libid="1369888840" list_type="2" />
+		<Item libid="66456409" list_type="2" />
+		<Item libid="221785448" list_type="2" />
+		<Item libid="284692138" list_type="2" />
+		<Item libid="278657664" list_type="2" />
+		<Item libid="1756211671" list_type="2" />
+		<Item libid="1388364651" list_type="2" />
+		<Item libid="127848533" list_type="2" />
+		<Item libid="2129894871" list_type="1" />
+		<Item libid="1321621240" list_type="1" />
+		<Item libid="1700838731" list_type="1" />
+		<Item libid="1331641565" list_type="1" />
+		<Item libid="1647992499" list_type="1" />
+		<Item libid="-1" list_type="1" />
+		<Item libid="-10" list_type="1" />
+	</DictOrder>
+	<Groups>
+		<Item groupid="1" name="优先看" color="1151462" libids="661040955@1647992499@1559491189@932300634@337438984@" />
+	</Groups>
+	<OnlineDicts>
+		<Item libid="90026" url="http://www.freedictionary.org/?Query={w}" name="Free Dictionary在线词典" visible="1" color="12860503" official="1" />
+		<Item libid="90022" url="https://www.merriam-webster.com/dictionary/{w}" name="韦氏在线词典" visible="1" color="16752706" official="1" />
+		<Item libid="90001" url="https://cn.bing.com/dict/search?q={w}" name="必应在线词典" visible="1" color="6201950" official="1" />
+		<Item libid="90020" url="https://www.collinsdictionary.com/search/?dictCode=english&amp;q={w}" name="柯林斯在线词典" visible="1" color="10658398" official="1" />
+		<Item libid="90025" url="https://www.urbandictionary.com/define.php?term={w}" name="Urban Dictionary" visible="1" color="6201950" official="1" />
+		<Item libid="90023" url="https://dictionary.cambridge.org/dictionary/english/{w}" name="剑桥词典" visible="1" color="16750026" official="1" />
+		<Item libid="90024" url="https://www.dictionary.com/browse/{w}" name="Dictionary.com在线词典" visible="1" color="13274879" official="1" />
+		<Item libid="90021" url="https://www.ldoceonline.com/search/english/direct/?q={w}" name="朗文当代英语在线词典" visible="1" color="4629503" official="1" />
+		<Item libid="90019" url="https://www.oxfordlearnersdictionaries.com/definition/english/{w}" name="Ox Living Dict" visible="1" color="5086899" official="1" />
+	</OnlineDicts>
+</Frhelper_Backup>
