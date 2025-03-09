@@ -3,25 +3,23 @@ return {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
     opts = {},
   },
   {
-    "jonahgoldwastaken/copilot-status.nvim",
+    "AndreM222/copilot-lualine",
     dependencies = {
       "zbirenbaum/copilot.lua",
       "nvim-lualine/lualine.nvim",
     },
     lazy = true,
     event = "BufReadPost",
-    opts = {
-      icons = {
-        idle = " ",
-        error = " ",
-        offline = " ",
-        warning = "𥉉 ",
-        loading = " ",
-      },
-      debug = false,
-    },
   },
 }

@@ -5,33 +5,49 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = function()
-      return { ensure_installed = require("configs.mason.packages").lsp }
-    end,
+    opts = {
+      ensure_installed = require("configs.mason.packages").lsp,
+      -- A "default handler" to the handlers option so we can get automatic setup
+      -- for all the language servers installed with mason.nvim
+      handlers = {
+        function(server_name)
+          require("lspconfig")[server_name].setup({})
+        end,
+        jdtls = function() end, -- We don't want to start jdtls here
+      },
+    },
   },
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover to show symbol under cursor" })
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
-    end,
-  },
-  {
-    "nvim-java/nvim-java",
+    cmd = { "LspInfo", "LspInstall", "LspStart" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("java").setup({
-        -- use nvim for simple java coding, otherwise IntelliJ plz
-        java_test = { enable = false },
-        java_debug_adapter = { enable = false },
-        spring_boot_tools = { enable = false },
-        notifications = { dap = false },
-      })
+      local lspconfig = require("lspconfig")
+      local lsp_capabilities = vim.tbl_deep_extend(
+        "force",
+        -- 1. Add cmp_nvim_lsp capabilities settings to lspconfig
+        require("cmp_nvim_lsp").default_capabilities(),
+        -- 2. Tell the server the capability of foldingRange (by 'nvim-ufo')
+        { textDocument = { foldingRange = { dynamicRegistration = false, lineFoldingOnly = true } } }
+      )
+      local lspconfig_defaults = lspconfig.util.default_config
+      -- This should be executed before you configure any language server
+      lspconfig_defaults.capabilities = vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, lsp_capabilities)
 
-      -- enable completion on lsp
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      require("lspconfig").jdtls.setup({
-        capabilities = capabilities,
+      -- LspAttach is where you enable features that only work
+      -- if there is a language server active in the file
+      vim.api.nvim_create_autocmd("LspAttach", {
+        desc = "LSP actions",
+        callback = function(event)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover to show symbol under cursor", buffer = event.buf })
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition", buffer = event.buf })
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = event.buf })
+          vim.keymap.set("n", "go", vim.lsp.buf.type_definition, { desc = "Go to type definition", buffer = event.buf })
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "List all implementations", buffer = event.buf })
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "List all references", buffer = event.buf })
+          vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, { desc = "Display signature information", buffer = event.buf })
+          vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action", buffer = event.buf })
+        end,
       })
     end,
   },

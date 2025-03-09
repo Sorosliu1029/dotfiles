@@ -91,6 +91,7 @@ alias gs="gst"
 alias lg="lazygit"
 alias vi="nvim"
 alias vim="nvim"
+alias ":q"="exit"
 
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"

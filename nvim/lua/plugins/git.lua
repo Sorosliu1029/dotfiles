@@ -94,4 +94,26 @@ return {
       { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
+  {
+    "NeogitOrg/neogit",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+      -- "ibhagwan/fzf-lua", -- optional
+      -- "echasnovski/mini.pick", -- optional
+    },
+    keys = {
+      { "<leader>ln", "<cmd>Neogit<cr>", desc = "Neogit" },
+    },
+    config = {
+      graph_style = "unicode",
+      process_spinner = true,
+      kind = "floating",
+    },
+  },
+  { "akinsho/git-conflict.nvim", version = "*", config = true },
 }

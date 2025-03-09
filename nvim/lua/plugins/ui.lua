@@ -21,13 +21,11 @@ return {
               end,
               color = { fg = "#ff9e64" },
             },
-            -- Show GitHub Copilot status
-            -- ref: https://github.com/jonahgoldwastaken/copilot-status.nvim?tab=readme-ov-file#example-with-lualine
             {
-              require("copilot_status").status_string,
-              cond = require("copilot_status").enabled,
-              color = { fg = "#00ff00" },
+              "copilot",
+              show_colors = true,
             },
+            "overseer",
             "encoding",
             "fileformat",
             "filetype",
@@ -35,6 +33,7 @@ return {
         },
         winbar = {
           lualine_c = {
+            -- current code context
             {
               "navic",
               color_correction = "static",
