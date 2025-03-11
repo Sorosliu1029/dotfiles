@@ -14,6 +14,12 @@ return {
           require("lspconfig")[server_name].setup({})
         end,
         jdtls = function() end, -- We don't want to start jdtls here
+        clangd = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.clangd.setup({
+            cmd = { "clangd", "--offset-encoding=utf-16" },
+          })
+        end,
       },
     },
   },
