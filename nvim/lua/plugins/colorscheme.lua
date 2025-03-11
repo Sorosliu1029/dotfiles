@@ -7,7 +7,15 @@ return {
     require("catppuccin").setup({
       flavour = "mocha",
       integrations = {
+        cmp = true,
+        dashboard = true,
+        flash = true,
+        illuminate = true,
+        indent_blankline = { enabled = true },
         mason = true,
+        markdown = true,
+        render_markdown = true,
+        neotree = true,
         neotest = true,
         noice = true,
         navic = {
@@ -18,6 +26,10 @@ return {
         nvim_surround = true,
         lsp_trouble = true,
         which_key = true,
+        overseer = true,
+        telescope = true,
+        treesitter = true,
+        treesitter_context = true,
       },
     })
 

@@ -34,6 +34,8 @@ M.formatter = {
   "isort",
   "cspell",
   "google-java-format",
+  "clang-format",
+  "cmakelang",
 }
 
 return M

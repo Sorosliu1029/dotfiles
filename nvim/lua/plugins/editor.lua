@@ -48,7 +48,7 @@ return {
       vim.g.rainbow_delimiters = { highlight = highlight }
       require("ibl").setup({
         scope = { highlight = highlight },
-        exclude = { filetypes = { "dashboard" } },
+        exclude = { filetypes = { "dashboard", "Trouble", "help", "lazy", "mason", "neo-tree", "notify", "toggleterm", "trouble" } },
       })
 
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)

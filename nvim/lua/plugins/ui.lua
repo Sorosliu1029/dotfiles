@@ -36,7 +36,7 @@ return {
             -- current code context
             {
               "navic",
-              color_correction = "static",
+              color_correction = "dynamic",
               navic_opts = nil,
             },
           },
@@ -161,6 +161,7 @@ return {
     },
     opts = {
       highlight = true,
+      lazy_update_context = true,
       lsp = { auto_attach = true },
     },
   },
