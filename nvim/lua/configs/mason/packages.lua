@@ -4,7 +4,6 @@ M.lsp = {
   "lua_ls",
   "ast_grep",
   "clangd",
-  "jedi_language_server",
   "gopls",
   "bashls",
   "cmake",
@@ -23,6 +22,12 @@ M.lsp = {
   "vimls",
   "yamlls",
   "pyright",
+}
+
+M.dap = {
+  "debugpy",
+  "cpptools",
+  "codelldb",
 }
 
 M.formatter = {
