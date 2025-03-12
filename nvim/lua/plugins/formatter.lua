@@ -52,6 +52,7 @@ return {
       end
 
       null_ls.setup({
+        -- ref: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
         sources = {
           -- Code Action
           --
@@ -64,11 +65,13 @@ return {
           -- Formatting
           --
           -- null_ls.builtins.formatting.codespell,
-          null_ls.builtins.formatting.black,
-          null_ls.builtins.formatting.google_java_format,
-          null_ls.builtins.formatting.isort,
-          null_ls.builtins.formatting.prettier,
-          null_ls.builtins.formatting.stylua,
+          null_ls.builtins.formatting.black, -- python
+          null_ls.builtins.formatting.google_java_format, --java
+          null_ls.builtins.formatting.isort, -- python
+          null_ls.builtins.formatting.prettier, -- web
+          null_ls.builtins.formatting.stylua, -- lua
+          null_ls.builtins.formatting.clang_format, -- c, cpp
+
 
           -- Diagnostic
           --
