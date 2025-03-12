@@ -1342,6 +1342,8 @@
 			<false/>
 			<key>Space</key>
 			<integer>0</integer>
+			<key>Special Font Config</key>
+			<string>{"entries":[{"start":60000,"count":396,"fontName":"codicon"}],"version":1}</string>
 			<key>Status Bar Layout</key>
 			<dict>
 				<key>advanced configuration</key>

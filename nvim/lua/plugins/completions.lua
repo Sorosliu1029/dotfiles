@@ -149,15 +149,26 @@ return {
           }),
         },
         enabled = function()
+          local enabled = true
+
           -- disable completion in comments
           -- ref: https://github.com/hrsh7th/nvim-cmp/wiki/Advanced-techniques#disabling-completion-in-certain-contexts-such-as-comments
           local context = require("cmp.config.context")
           -- keep command mode completion enabled when cursor is in a comment
           if vim.api.nvim_get_mode().mode == "c" then
-            return true
+            enabled = enabled and true
           else
-            return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+            enabled = enabled and not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
           end
+
+          -- disable completion in telescope prompt
+          -- ref: https://github.com/hrsh7th/nvim-cmp/issues/60#issuecomment-1247574145
+          local buftype = vim.api.nvim_get_option_value("buftype", { buf = 0 })
+          if buftype == "prompt" then
+            enabled = enabled and false
+          end
+
+          return enabled
         end,
       })
 

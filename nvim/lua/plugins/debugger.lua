@@ -1,10 +1,6 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    dependencies = {
-      "rcarriga/nvim-dap-ui",
-      "theHamsta/nvim-dap-virtual-text",
-    },
     -- stylua: ignore
     keys = {
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
@@ -23,9 +19,32 @@ return {
       { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
       { "<leader>ds", function() require("dap").session() end, desc = "Session" },
       { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-      { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+      { "<leader>dwh", function() require("dap.ui.widgets").hover() end, desc = "Widgets Hover", mode = { "n", "v" } },
+      { "<leader>dwp", function() require("dap.ui.widgets").preview() end, desc = "Widgets Preview", mode = { "n", "v" } },
+      {
+        "<leader>dwf",
+        function()
+          local widgets = require("dap.ui.widgets")
+          widgets.centered_float(widgets.frames)
+        end,
+        desc = "Widgets Float Frames",
+      },
+      {
+        "<leader>dws",
+        function()
+          local widgets = require("dap.ui.widgets")
+          widgets.centered_float(widgets.scopes)
+        end,
+        desc = "Widgets Float Scopes",
+      },
     },
     config = function()
+      local sign = vim.fn.sign_define
+      sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint" })
+      sign("DapBreakpointCondition", { text = "ﳁ", texthl = "DapBreakpointCondition" })
+      sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint" })
+      sign("DapStopped", { text = "", texthl = "DapStopped" })
+
       -- setup for new added dap
       local dap = require("dap")
       local dap_utils = require("dap.utils")
@@ -69,6 +88,7 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = {
+      "mfussenegger/nvim-dap",
       "theHamsta/nvim-dap-virtual-text",
       "nvim-neotest/nvim-nio",
     },
@@ -82,11 +102,18 @@ return {
       local dap, dapui = require("dap"), require("dapui")
       dapui.setup()
 
-      dap.listeners.before.attach.dapui_config = dapui.open
-      dap.listeners.before.launch.dapui_config = dapui.open
-      dap.listeners.after.event_initialized.dapui_config = dapui.open
-      dap.listeners.before.event_terminated.dapui_config = dapui.close
-      dap.listeners.before.event_exited.dapui_config = dapui.close
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
     end,
   },
   {
