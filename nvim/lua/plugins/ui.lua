@@ -3,6 +3,11 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    init = function()
+      vim.keymap.set("n", "<leader>bo", "<cmd>BufferLineCloseOthers<CR>", { desc = "BufferLine: CloseOthers" })
+      vim.keymap.set("n", "<leader>bc", "<cmd>BufferLinePickClose<CR>", { desc = "BufferLine: PickClose" })
+      vim.keymap.set("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", { desc = "BufferLine: TogglePin" })
+    end,
     opts = function()
       local winbar = {
         lualine_c = {
@@ -18,6 +23,26 @@ return {
       return {
         options = {
           theme = "catppuccin",
+          ignore_focus = {
+            "neo-tree",
+            "Outline",
+            "dashboard",
+            "Trouble",
+            "lazy",
+            "mason",
+            "notify",
+            "toggleterm",
+            "trouble",
+            "dapui-watches",
+            "dapui-repl",
+            "dapui-scopes",
+            "dapui-stacks",
+            "dapui-locals",
+            "dapui-frames",
+            "dapui-breakpoints",
+            "dapui-console",
+            "OverseerList",
+          },
         },
         sections = {
           lualine_x = {
