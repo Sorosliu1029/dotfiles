@@ -71,6 +71,7 @@ return {
           null_ls.builtins.formatting.prettier, -- web
           null_ls.builtins.formatting.stylua, -- lua
           null_ls.builtins.formatting.clang_format, -- c, cpp
+          null_ls.builtins.formatting.shfmt, -- shell
 
 
           -- Diagnostic

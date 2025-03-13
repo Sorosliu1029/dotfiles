@@ -2,6 +2,7 @@ return {
   "chrisgrieser/nvim-early-retirement",
   event = "VeryLazy",
   opts = {
-    minimumBufferNum = 2,
+    minimumBufferNum = 10,
+    notificationOnAutoClose = true,
   },
 }

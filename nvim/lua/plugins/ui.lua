@@ -4,6 +4,17 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = function()
+      local winbar = {
+        lualine_c = {
+          -- current code context
+          {
+            "navic",
+            color_correction = "dynamic",
+            navic_opts = nil,
+          },
+        },
+      }
+
       return {
         options = {
           theme = "catppuccin",
@@ -31,16 +42,8 @@ return {
             "filetype",
           },
         },
-        winbar = {
-          lualine_c = {
-            -- current code context
-            {
-              "navic",
-              color_correction = "dynamic",
-              navic_opts = nil,
-            },
-          },
-        },
+        winbar = winbar,
+        inactive_winbar = winbar,
       }
     end,
   },
