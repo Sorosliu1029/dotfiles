@@ -9,7 +9,7 @@ return {
       -- { "3rd/image.nvim", opts = {} }, -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     init = function()
-      vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem reveal left<CR>", { desc = "Open file explorer" })
+      vim.keymap.set("n", "<C-n>", "<Cmd>Neotree filesystem reveal left toggle<CR>", { desc = "Open file explorer" })
     end,
     opts = {
       close_if_last_window = true,
