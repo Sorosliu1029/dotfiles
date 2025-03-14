@@ -16,8 +16,13 @@ return {
         jdtls = function() end, -- We don't want to start jdtls here
         clangd = function()
           local lspconfig = require("lspconfig")
+          local root_files = { ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt" }
           lspconfig.clangd.setup({
-            cmd = { "clangd", "--offset-encoding=utf-16" },
+            cmd = { "clangd", "--offset-encoding=utf-16", "--enable-config" },
+            root_dir = function(fname)
+              return lspconfig.util.root_pattern(unpack(root_files))(fname) or lspconfig.util.find_git_ancestor(fname)
+            end,
+            single_file_support = true,
           })
         end,
       },
