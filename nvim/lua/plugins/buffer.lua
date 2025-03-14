@@ -3,6 +3,6 @@ return {
   event = "VeryLazy",
   opts = {
     minimumBufferNum = 10,
-    notificationOnAutoClose = true,
+    notificationOnAutoClose = false,
   },
 }

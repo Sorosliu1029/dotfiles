@@ -6,7 +6,6 @@ return {
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
       { "<leader>dc", function() require("dap").continue() end, desc = "Run/Continue" },
-      { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
       { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
       { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
       { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
@@ -37,6 +36,14 @@ return {
         end,
         desc = "Widgets Float Scopes",
       },
+      {
+        "<leader>dwt",
+        function()
+          local widgets = require("dap.ui.widgets")
+          widgets.centered_float(widgets.threads)
+        end,
+        desc = "Widgets Float Threads",
+      },
     },
     config = function()
       local sign = vim.fn.sign_define
@@ -58,26 +65,17 @@ return {
       for _, lang in ipairs({ "c", "cpp" }) do
         dap.configurations[lang] = {
           {
-            type = "codelldb",
-            request = "launch",
             name = "Launch file",
-            program = dap_utils.pick_file,
-            cwd = "${workspaceFolder}",
-          },
-          {
             type = "codelldb",
             request = "launch",
-            name = "Launch file with args",
             program = dap_utils.pick_file,
-            args = function()
-              return dap_utils.splitstr(vim.fn.input("Program args: "))
-            end,
             cwd = "${workspaceFolder}",
+            stopOnEntry = false,
           },
           {
+            name = "Attach to process",
             type = "codelldb",
             request = "attach",
-            name = "Attach to process",
             pid = dap_utils.pick_process,
             cwd = "${workspaceFolder}",
           },

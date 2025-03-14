@@ -23,6 +23,9 @@ return {
       return {
         options = {
           theme = "catppuccin",
+          disabled_filetypes = {
+            winbar = { "dap-repl" },
+          },
           ignore_focus = {
             "neo-tree",
             "Outline",
@@ -33,14 +36,14 @@ return {
             "notify",
             "toggleterm",
             "trouble",
-            "dapui-watches",
-            "dapui-repl",
-            "dapui-scopes",
-            "dapui-stacks",
-            "dapui-locals",
-            "dapui-frames",
-            "dapui-breakpoints",
-            "dapui-console",
+            "dap-repl",
+            "dapui_watches",
+            "dapui_scopes",
+            "dapui_stacks",
+            "dapui_locals",
+            "dapui_frames",
+            "dapui_breakpoints",
+            "dapui_console",
             "OverseerList",
           },
         },
