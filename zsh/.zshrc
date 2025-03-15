@@ -147,21 +147,11 @@ unset __conda_setup
 # conda end
 
 # goenv setting
-if [[ $machine == "Mac" ]]; then
-    eval "$(goenv init -)"
-# export PATH="$GOROOT/bin:$PATH"
-# export PATH="$PATH:$GOPATH/bin"
-fi
+eval "$(goenv init -)"
 # goenv end
 
-# pnpm
-if [[ $machine == "Mac" ]]; then
-    export PNPM_HOME="$HOME/Library/pnpm"
-    case ":$PATH:" in
-      *":$PNPM_HOME:"*) ;;
-      *) export PATH="$PNPM_HOME:$PATH" ;;
-    esac
-fi
+# pnpm (installed by homebrew)
+export PNPM_HOME="$BREW_PREFIX/bin"
 # pnpm end
 
 # GHCup, main installer for the general purpose language Haskell
