@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-# Script: install_nerd_fonts.sh
-# Description: A script to interactively select and install Nerd Fonts for macOS using Homebrew and fzf.
-# Author: zx0r
-# Version: 1.0
+# Description: A script to interactively select and install brew formula using Homebrew and fzf.
 # source: https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e?permalink_comment_id=5403665#gistcomment-5403665
 
 # Enable strict error handling
 set -euo pipefail
 
 # Constants
-FZF_PROMPT="Select Nerd Fonts: "
+FZF_PROMPT="Select Formulas: "
 FZF_HEIGHT="60%"
 FZF_LAYOUT="reverse"
 
@@ -68,53 +65,53 @@ check_dependencies() {
   done
 }
 
-# Function to fetch available Nerd Fonts
-fetch_nerd_fonts() {
-  brew search '/font-.*-nerd-font/' | awk '{ print $1 }'
+# Function to fetch all formulas in Brewfile
+fetch_formulas() {
+  cat Brewfile | grep "brew " | awk '{ gsub(/"/, "", $2); print $2 }'
 }
 
-# Function to select fonts interactively using fzf
-select_fonts() {
-  local fonts="$1"
-  echo "$fonts" | fzf --multi --prompt="$FZF_PROMPT" --height="$FZF_HEIGHT" --layout="$FZF_LAYOUT"
+# Function to select formulas interactively using fzf
+select_formulas() {
+  local formulas="$1"
+  echo "$formulas" | fzf --multi --prompt="$FZF_PROMPT" --height="$FZF_HEIGHT" --layout="$FZF_LAYOUT"
 }
 
-# Function to install selected fonts
-install_fonts() {
-  local selected_fonts="$1"
-  if [[ -z "$selected_fonts" ]]; then
-    print_warn "No fonts selected. Exiting."
+# Function to install selected formulas
+install_formulas() {
+  local selected_formulas="$1"
+  if [[ -z "$selected_formulas" ]]; then
+    print_warn "No formulas selected. Exiting."
     exit 0
   fi
 
-  print_step "Installing selected Nerd Fonts..."
-  # Use a while loop to handle font names with spaces
-  echo "$selected_fonts" | while read -r font; do
-    echo -e "Installing $font..."
-    if brew install --cask "$font"; then
-      print_success "Successfully installed $font."
+  print_step "Installing selected formulas ..."
+  # Use a while loop to handle formula names with spaces
+  echo "$selected_formulas" | while read -r formula; do
+    echo -e "Installing $formula..."
+    if brew install "$formula"; then
+      print_success "Successfully installed $formula."
     else
-      print_warn "Failed to install $font."
+      print_warn "Failed to install $formula."
     fi
   done
 }
 
 # Main function to orchestrate the script
 main() {
-  print_step "Select the Nerd Fonts you want to install (use TAB to select multiple):"
+  print_step "Select the formulas you want to install (use TAB to select multiple):"
 
   check_dependencies
 
-  local fonts
-  fonts=$(fetch_nerd_fonts)
-  if [[ -z "$fonts" ]]; then
-    print_error "No Nerd Fonts found. Please ensure Homebrew is up to date."
+  local formulas
+  formulas=$(fetch_formulas)
+  if [[ -z "$formulas" ]]; then
+    print_error "No formulas found. Please ensure Brewfile is up to date."
   fi
 
-  local selected_fonts
-  selected_fonts=$(select_fonts "$fonts")
+  local selected_formulas
+  selected_formulas=$(select_formulas "$formulas")
 
-  install_fonts "$selected_fonts"
+  install_formulas "$selected_formulas"
 }
 
 # Run the script
