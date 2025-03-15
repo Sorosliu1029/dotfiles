@@ -1,3 +1,21 @@
+unameOut="$(uname -s)"
+case "${unameOut}" in
+  Linux*)     machine=Linux;;
+  Darwin*)    machine=Mac;;
+  *)          machine="UNKNOWN:${unameOut}"
+esac
+
+if [[ $machine == "Linux" ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+elif [[ $machine == "Mac" ]]; then
+    # Homebrew Apple Silicon, place before `plugins`
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    echo $machine
+    exit 0
+fi
+BREW_PREFIX=$(brew --prefix)
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -12,7 +30,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 # recommended themes:fino, strung, agnoster, spaceship
 # ZSH_THEME="powerlevel10k/powerlevel10k"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+source "$BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,8 +67,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-# Homebrew Apple Silicon, place before `plugins`
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -103,7 +119,7 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # Homebrew end
 
 # Autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+[ -f "$BREW_PREFIX/etc/profile.d/autojump.sh" ] && . "$BREW_PREFIX/etc/profile.d/autojump.sh"
 # autojump end
 
 # p10k: To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -112,35 +128,46 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 # conda initialize
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [[ $machine == "Linux" ]]; then
+    CONDA_PATH="$HOME/.anaconda3"
+    __conda_setup="$('/home/soros/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+elif [[ $machine == "Mac" ]]; then
+    CONDA_PATH="$HOME/miniconda3"
+    __conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+fi
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/soros/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/soros/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$CONDA_PATH/etc/profile.d/conda.sh" ]; then . "$CONDA_PATH/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/soros/miniconda3/bin:$PATH"
+        export PATH="$CONDA_PATH/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # conda end
 
 # goenv setting
-eval "$(goenv init -)"
+if [[ $machine == "Mac" ]]; then
+    eval "$(goenv init -)"
 # export PATH="$GOROOT/bin:$PATH"
 # export PATH="$PATH:$GOPATH/bin"
+fi
 # goenv end
 
 # pnpm
-export PNPM_HOME="/Users/soros/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+if [[ $machine == "Mac" ]]; then
+    export PNPM_HOME="$HOME/Library/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+fi
 # pnpm end
 
 # GHCup, main installer for the general purpose language Haskell
-[ -f "/Users/soros/.ghcup/env" ] && . "/Users/soros/.ghcup/env" # ghcup-env
+if [[ $machine == "Mac" ]]; then
+    [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+fi
 # GHCup end
 
 # Lazygit config folder
@@ -148,11 +175,13 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Lazygit end
 
 # DOOM emacs
-export PATH="/Users/soros/.config/emacs/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 # DOOM emacs end
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ $machine == "Mac" ]]; then
+    export SDKMAN_DIR="$HOME/.sdkman"
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
 # sdkman end
 
