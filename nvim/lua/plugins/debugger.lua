@@ -63,6 +63,10 @@ return {
         }
       end
       for _, lang in ipairs({ "c", "cpp" }) do
+        -- To allow multiple threads to get stopped.
+        -- ref: https://github.com/mfussenegger/nvim-dap/discussions/284#discussioncomment-9969550
+        dap.defaults[lang].auto_continue_if_many_stopped = false
+
         dap.configurations[lang] = {
           {
             name = "Launch file",
