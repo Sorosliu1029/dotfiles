@@ -109,7 +109,7 @@ return {
     keys = {
       { "<leader>ln", "<cmd>Neogit<cr>", desc = "Neogit" },
     },
-    config = {
+    opts = {
       graph_style = "unicode",
       process_spinner = true,
       kind = "floating",
