@@ -108,6 +108,11 @@ alias lg="lazygit"
 alias vi="nvim"
 alias vim="nvim"
 alias ":q"="exit"
+if [[ -L $HOME/.zshrc ]]; then
+  __p=$(readlink $HOME/.zshrc)
+  __d=$(dirname $__p)
+  [[ -f "$__d/${machine:l}.alias.zsh" ]] && source "$__d/${machine:l}.alias.zsh"
+fi
 
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
@@ -155,9 +160,7 @@ export PNPM_HOME="$BREW_PREFIX/bin"
 # pnpm end
 
 # GHCup, main installer for the general purpose language Haskell
-if [[ $machine == "Mac" ]]; then
-    [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
-fi
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
 # GHCup end
 
 # Lazygit config folder
@@ -165,7 +168,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Lazygit end
 
 # DOOM emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
+if [[ $machine == "Mac" ]]; then
+  export PATH="$HOME/.config/emacs/bin:$PATH"
+fi
 # DOOM emacs end
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
