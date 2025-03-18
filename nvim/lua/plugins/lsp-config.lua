@@ -25,6 +25,10 @@ return {
             single_file_support = true,
           })
         end,
+        bashls = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.bashls.setup({ filetypes = { "sh", "bash", "zsh" } })
+        end,
       },
     },
   },
