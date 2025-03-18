@@ -51,6 +51,8 @@ return {
         end
       end
 
+      local shiftwidth = vim.opt.shiftwidth:get()
+
       null_ls.setup({
         -- ref: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
         sources = {
@@ -71,7 +73,10 @@ return {
           null_ls.builtins.formatting.prettier, -- web
           null_ls.builtins.formatting.stylua, -- lua
           null_ls.builtins.formatting.clang_format, -- c, cpp
-          null_ls.builtins.formatting.shfmt, -- shell
+          null_ls.builtins.formatting.shfmt.with({
+            extra_filetypes = { "zsh" },
+            extra_args = { "-i", shiftwidth, "-ci" },
+          }), -- shell
           null_ls.builtins.formatting.yamlfmt, -- yaml
 
           -- Diagnostic
