@@ -1,6 +1,7 @@
 tap "d12frosted/emacs-plus"
 tap "homebrew/bundle"
 tap "homebrew/services"
+brew "asdf"
 brew "python@3.12"
 brew "autojump"
 brew "clang-format"

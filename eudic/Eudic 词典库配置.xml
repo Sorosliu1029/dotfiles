@@ -12,12 +12,13 @@
 		<Item libid="-3" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="-2" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="-1" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/combined.bin" visible="1" expand="0" name="" char_conversion="0" enable_full_text="1" online_search_type="0" dark_style="0" />
+		<Item libid="20020" path="/Users/soros/Library/Eudb_en/20020.eudb" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="20301" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/oln_wiki_cn.eudb" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="20303" path="/Applications/Eudic.app/Contents/Library/LoginItems/LightPeek_en.app/Contents/Resources/Html/oln_wiki_en.eudb" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="82199984" path="/Users/soros/Library/Eudb_en/240 Roots.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="192315983" path="/Users/soros/Library/Eudb_en/o2022k.1.mdd" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="337438984" path="/Users/soros/Library/Eudb_en/Macmillan English Dictionary for Advanced Learners.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
-		<Item libid="480366799" path="system_tts" visible="1" expand="0" name="" char_conversion="1" enable_full_text="0" online_search_type="0" dark_style="805649448" />
+		<Item libid="480366799" path="system_tts" visible="1" expand="0" name="" char_conversion="1" enable_full_text="0" online_search_type="0" dark_style="671300648" />
 		<Item libid="661040955" path="/Users/soros/Library/Eudb_en/Vocabulary.com Dictionary.mdx" visible="1" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="932300634" path="/Users/soros/Library/Eudb_en/Oxford Collocations Dictionary for students of English 2nd.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
 		<Item libid="1299133220" path="/Users/soros/Library/Eudb_en/Merriam-Webster's Vocabulary Builder.mdx" visible="0" expand="0" name="" char_conversion="0" enable_full_text="0" online_search_type="0" dark_style="0" />
@@ -40,7 +41,6 @@
 		<Item libid="661040955" list_type="0" />
 		<Item libid="1868820108" list_type="0" />
 		<Item libid="-1" list_type="0" />
-		<Item libid="-10" list_type="0" />
 		<Item libid="192315983" list_type="2" />
 		<Item libid="928587764" list_type="2" />
 		<Item libid="569738332" list_type="2" />
