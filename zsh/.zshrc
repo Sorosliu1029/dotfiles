@@ -107,6 +107,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
 
 # Homebrew settings
 export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # Homebrew end
