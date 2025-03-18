@@ -98,7 +98,7 @@ alias ":q"="exit"
 if [[ -L $HOME/.zshrc ]]; then
   __p=$(readlink $HOME/.zshrc)
   __d=$(dirname $__p)
-  [[ -f "$__d/${machine:l}.alias.zsh" ]] && source "$__d/${machine:l}.alias.zsh"
+  [[ -f "$__d/${machine:l}.zsh" ]] && source "$__d/${machine:l}.zsh"
   unset __p __d
 fi
 
