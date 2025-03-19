@@ -121,23 +121,22 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # p10k end
 
 # conda initialize
-# !! Contents within this block are managed by 'conda init' !!
 if [[ $machine == "Linux" ]]; then
-    CONDA_PATH="$HOME/.anaconda3"
-    __conda_setup="$('/home/soros/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_path="$HOME/.miniconda3"
+    __conda_setup="$('/home/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 elif [[ $machine == "Mac" ]]; then
-    CONDA_PATH="$HOME/miniconda3"
+    __conda_path="$HOME/miniconda3"
     __conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 fi
 if [[ $? -eq 0 ]]; then
     eval "$__conda_setup"
 else
-    if [[ -f "$CONDA_PATH/etc/profile.d/conda.sh" ]]; then source "$CONDA_PATH/etc/profile.d/conda.sh"
+    if [[ -f "$__conda_path/etc/profile.d/conda.sh" ]]; then source "$__conda_path/etc/profile.d/conda.sh"
     else
-        export PATH="$CONDA_PATH/bin:$PATH"
+        export PATH="$__conda_path/bin:$PATH"
     fi
 fi
-unset CONDA_PATH
+unset __conda_path
 unset __conda_setup
 # conda end
 
