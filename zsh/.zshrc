@@ -9,7 +9,6 @@ if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   if [[ $machine == "Linux" ]]; then
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   elif [[ $machine == "Mac" ]]; then
-      # Homebrew Apple Silicon, place before `plugins`
       eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 fi
@@ -73,7 +72,7 @@ plugins=(
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 # Manually set language environment
 export LANG=en_US.UTF-8
@@ -96,8 +95,8 @@ alias vi="nvim"
 alias vim="nvim"
 alias ":q"="exit"
 if [[ -L $HOME/.zshrc ]]; then
-  __p=$(readlink $HOME/.zshrc)
-  __d=$(dirname $__p)
+  __p=$(readlink "$HOME/.zshrc")
+  __d=$(dirname "$__p")
   [[ -f "$__d/${machine:l}.zsh" ]] && source "$__d/${machine:l}.zsh"
   unset __p __d
 fi
@@ -117,7 +116,7 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # autojump end
 
 # p10k: To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
-[[ -f $HOME/.p10k.zsh ]] && source $HOME/.p10k.zsh
+[[ -f $HOME/.p10k.zsh ]] && source "$HOME/.p10k.zsh"
 # p10k end
 
 # conda initialize
