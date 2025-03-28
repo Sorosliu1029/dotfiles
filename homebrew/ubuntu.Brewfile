@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
 brew "autojump"
 brew "btop"
 brew "clang-format"
