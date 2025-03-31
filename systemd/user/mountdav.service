@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount WebDAV Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=bash -c 'for i in {1..15}; do if ping -c 1 jianguoyun.com; then mount /home/soros/.calibre; break; else sleep 1; fi; done'
+ExecStop=umount /home/soros/.calibre
+RemainAfterExit=true
+
+[Install]
+WantedBy=default.target
