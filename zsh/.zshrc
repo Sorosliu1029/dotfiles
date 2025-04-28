@@ -161,6 +161,12 @@ if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.config/emacs/bin:"* ]]; 
 fi
 # DOOM emacs end
 
+# Cuda
+if [[ $machine == "Linux" ]]; then
+    export PATH="/usr/local/cuda/bin:$PATH"
+fi
+# Cuda end
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 if [[ $machine == "Mac" ]] && [[ -z "${SDKMAN_DIR:-}" ]]; then
     export SDKMAN_DIR="$HOME/.sdkman"
