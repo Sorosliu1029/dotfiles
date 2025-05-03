@@ -173,6 +173,3 @@ if [[ $machine == "Mac" ]] && [[ -z "${SDKMAN_DIR:-}" ]]; then
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 # sdkman end
-
-# unset, to prevent polluting
-unset machine
