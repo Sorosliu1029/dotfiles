@@ -1,1 +1,1 @@
-/Users/soros/dotfiles_private/spotify-player/client_id.txt
+/Users/soros/.dotfiles_private/spotify-player/client_id.txt
