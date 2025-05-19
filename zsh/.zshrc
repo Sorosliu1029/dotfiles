@@ -125,7 +125,7 @@ if [[ $machine == "Linux" ]]; then
     __conda_setup="$('/home/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 elif [[ $machine == "Mac" ]]; then
     __conda_path="$HOME/miniconda3"
-    __conda_setup="$('/Users/soros/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$('/Users/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 fi
 if [[ $? -eq 0 ]]; then
     eval "$__conda_setup"

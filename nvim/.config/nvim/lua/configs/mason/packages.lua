@@ -10,7 +10,7 @@ M.lsp = {
   "cssls",
   "tailwindcss",
   "dockerls",
-  "hls",
+  -- "hls",
   "eslint",
   "ts_ls",
   "jsonls",

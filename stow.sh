@@ -15,5 +15,5 @@ if [[ $machine == "Linux" ]]; then
     tmux vim zsh
 elif [[ $machine == "Mac" ]]; then
   stow -vv --dotfiles stow bash btop conda doom gh gh-copilot git gnupg lazygit nvim \
-    p10k sioyek spotify-player tmux vim zsh
+    p10k sioyek spotify-player tmux vim zsh karabiner
 fi
