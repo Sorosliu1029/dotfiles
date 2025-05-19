@@ -66,9 +66,8 @@ plugins=(
   colored-man-pages
   emoji
   fzf
-  iterm2
   nvm
-  asdf
+  eza
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
 
@@ -121,22 +120,19 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 
 # conda initialize
 if [[ $machine == "Linux" ]]; then
-    __conda_path="$HOME/.miniconda3"
     __conda_setup="$('/home/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-elif [[ $machine == "Mac" ]]; then
-    __conda_path="$HOME/miniconda3"
-    __conda_setup="$('/Users/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-fi
-if [[ $? -eq 0 ]]; then
-    eval "$__conda_setup"
-else
-    if [[ -f "$__conda_path/etc/profile.d/conda.sh" ]]; then source "$__conda_path/etc/profile.d/conda.sh"
+    if [[ $? -eq 0 ]]; then
+        eval "$__conda_setup"
     else
-        export PATH="$__conda_path/bin:$PATH"
+        if [[ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]]; then source "$HOME/.miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOME/.miniconda3/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+elif [[ $machine == "Mac" ]]; then
+  eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 fi
-unset __conda_path
-unset __conda_setup
 # conda end
 
 # goenv setting
