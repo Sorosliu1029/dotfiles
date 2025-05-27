@@ -44,9 +44,9 @@ elif [[ $machine == "Mac" ]]; then
   brew bundle --file ./homebrew/Brewfile
 
   echo "--> install rime input method"
-  mkdir -p ~/.rime
-  cd ~/.rime
+  cd ~/Library/Rime/ || echo "No Rime folder"
   curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash -s -- Sorosliu1029/rime-conf/my-double-pinyin-flypy-packages.conf
+  cp ./plum/package/Sorosliu1029/conf/*.custom.yaml ./plum/package/Sorosliu1029/conf/*.lua ./
   cd - || exit
 
 fi
