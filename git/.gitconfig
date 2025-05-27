@@ -5,6 +5,8 @@
 	excludesfile = ~/.gitignore_global
 [commit]
 	gpgSign = true
+[tag]
+	gpgSign = true
 [pull]
 	rebase = false
 [include]
@@ -12,7 +14,3 @@
 # Enforce SSH
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
-[tag]
-	gpgSign = true
-[gpg]
-	format = ssh
