@@ -7,3 +7,10 @@ keybinding:
     pullFiles: P # original is p
   branches:
     pushTag: p # original is P
+
+# Custom Pagers
+# ref: https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#delta
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
