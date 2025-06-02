@@ -66,7 +66,7 @@ plugins=(
   colored-man-pages
   emoji
   fzf
-  nvm
+  asdf
   eza
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
@@ -80,6 +80,9 @@ export LC_CTYPE=$LANG
 
 # Editor setting
 export EDITOR='nvim'
+
+# User config folder (used by lazygit, DOOM Emacs, etc)
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # vim style key binding
 bindkey -v
@@ -136,7 +139,7 @@ fi
 # conda end
 
 # goenv setting
-[[ -z "${GOENV_ROOT:-}" ]] && eval "$(goenv init -)"
+# [[ -z "${GOENV_ROOT:-}" ]] && eval "$(goenv init -)"
 # goenv end
 
 # pnpm (installed by homebrew)
@@ -147,14 +150,11 @@ export PNPM_HOME="$HOMEBREW_PREFIX/bin"
 [[ -f "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env" # ghcup-env
 # GHCup end
 
-# Lazygit config folder
-export XDG_CONFIG_HOME="$HOME/.config"
-# Lazygit end
-
 # DOOM emacs
-if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.config/emacs/bin:"* ]]; then
-  export PATH="$HOME/.config/emacs/bin:$PATH"
+if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.emacs.d/bin:"* ]]; then
+  export PATH="$HOME/.emacs.d/bin:$PATH"
 fi
+alias emacs="emacsclient --alternate-editor=\"\" -t"
 # DOOM emacs end
 
 # Cuda
@@ -162,6 +162,10 @@ if [[ $machine == "Linux" ]]; then
     export PATH="/usr/local/cuda/bin:$PATH"
 fi
 # Cuda end
+
+# asdf
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# asdf end
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 if [[ $machine == "Mac" ]] && [[ -z "${SDKMAN_DIR:-}" ]]; then

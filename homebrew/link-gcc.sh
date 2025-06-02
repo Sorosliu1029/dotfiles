@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=14
+VERSION=15
 BREW_PREFIX=$(brew --prefix)
 LINK_LIST=("gcc" "g++" "c++" "cpp")
 
@@ -13,8 +13,11 @@ if [[ $1 == link ]]; then
 	for i in "${LINK_LIST[@]}"; do
 		ln -s "$BREW_PREFIX"/bin/"$i"-$VERSION "$BREW_PREFIX"/bin/"$i"
 	done
-else
+elif [[ $1 == unlink ]]; then
 	for i in "${LINK_LIST[@]}"; do
 		rm -f "$BREW_PREFIX"/bin/"$i"
 	done
+else 
+  echo "Usage: $0 {link|unlink}"
+  exit 1
 fi
