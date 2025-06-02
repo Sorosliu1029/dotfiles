@@ -99,7 +99,7 @@ alias ":q"="exit"
 if [[ -L $HOME/.zshrc ]]; then
   __p=$(readlink "$HOME/.zshrc")
   __d=$(dirname "$__p")
-  [[ -f "$__d/${machine:l}.zsh" ]] && source "$__d/${machine:l}.zsh"
+  [[ -f "$HOME/$__d/${machine:l}.zsh" ]] && source "$HOME/$__d/${machine:l}.zsh"
   unset __p __d
 fi
 
@@ -111,6 +111,8 @@ export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
 export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
+export HOMEBREW_NO_UPDATE_REPORT_FORMULAE="true"
+export HOMEBREW_NO_UPDATE_REPORT_CASKS="true"
 # Homebrew end
 
 # Autojump
