@@ -12,7 +12,7 @@ esac
 
 if [[ $machine == "Linux" ]]; then
   stow -vv --dotfiles stow bash btop conda gh gh-copilot git p10k lazygit nvim \
-    tmux vim zsh
+    tmux vim zsh jupyter
 elif [[ $machine == "Mac" ]]; then
   stow -vv --dotfiles stow bash btop conda doom gh gh-copilot git gnupg lazygit nvim \
     p10k sioyek spotify-player tmux vim zsh karabiner
