@@ -29,6 +29,10 @@ fi
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 
+# p10k: To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
+[[ -f $HOME/.p10k.zsh ]] && source "$HOME/.p10k.zsh"
+# p10k end
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 # Uncomment the following line to use hyphen-insensitive completion. Case sensitive completion must be off. _ and - will be interchangeable.
@@ -70,6 +74,9 @@ plugins=(
   eza
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
+# Configuration for zsh-autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
+
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -103,9 +110,6 @@ if [[ -L $HOME/.zshrc ]]; then
   unset __p __d
 fi
 
-# Configuration for zsh-autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
-
 # Homebrew settings
 export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=1
@@ -114,14 +118,6 @@ export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 export HOMEBREW_NO_UPDATE_REPORT_FORMULAE="true"
 export HOMEBREW_NO_UPDATE_REPORT_CASKS="true"
 # Homebrew end
-
-# Autojump
-[[ -f "$HOMEBREW_PREFIX/etc/profile.d/autojump.sh" ]] && source "$HOMEBREW_PREFIX/etc/profile.d/autojump.sh"
-# autojump end
-
-# p10k: To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
-[[ -f $HOME/.p10k.zsh ]] && source "$HOME/.p10k.zsh"
-# p10k end
 
 # conda initialize
 if [[ $machine == "Linux" ]]; then
@@ -140,14 +136,6 @@ elif [[ $machine == "Mac" ]]; then
 fi
 # conda end
 
-# goenv setting
-# [[ -z "${GOENV_ROOT:-}" ]] && eval "$(goenv init -)"
-# goenv end
-
-# pnpm (installed by homebrew)
-export PNPM_HOME="$HOMEBREW_PREFIX/bin"
-# pnpm end
-
 # GHCup, main installer for the general purpose language Haskell
 [[ -f "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env" # ghcup-env
 # GHCup end
@@ -165,13 +153,3 @@ if [[ $machine == "Linux" ]]; then
 fi
 # Cuda end
 
-# asdf
-# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# asdf end
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-if [[ $machine == "Mac" ]] && [[ -z "${SDKMAN_DIR:-}" ]]; then
-    export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-    [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
-fi
-# sdkman end
