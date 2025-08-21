@@ -100,7 +100,7 @@ bindkey '^E' end-of-line
 alias c="clear"
 alias gs="gst"
 alias lg="lazygit"
-alias vi="nvim"
+alias v="nvim"
 alias vim="nvim"
 alias ":q"="exit"
 if [[ -L $HOME/.zshrc ]]; then
