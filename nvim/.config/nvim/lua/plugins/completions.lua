@@ -83,12 +83,13 @@ return {
           -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<CR>"] = cmp.mapping(function(fallback)
             -- FIXME: some problems: when there is an expanedable snip in the prefix, it will be expand
+            -- TRY to fix: comment out
             if cmp.visible() then
-              if luasnip.expandable() then
-                luasnip.expand()
-              else
+              -- if luasnip.expandable() then
+              --   luasnip.expand()
+              -- else
                 cmp.confirm({ select = true })
-              end
+              -- end
             else
               fallback()
             end

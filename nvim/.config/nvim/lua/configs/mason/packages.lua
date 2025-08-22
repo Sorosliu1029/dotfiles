@@ -22,6 +22,7 @@ M.lsp = {
   "vimls",
   "yamlls",
   "pyright",
+  "texlab",
 }
 
 M.dap = {
