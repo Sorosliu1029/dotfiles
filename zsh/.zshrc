@@ -1,5 +1,6 @@
-unameOut="$(uname -s)"
+unameOut="$(uname -a)"
 case "${unameOut}" in
+  *pace.gatech.edu*) machine=Pace;;
   Linux*)     machine=Linux;;
   Darwin*)    machine=Mac;;
   *)          echo "Unknown Machine:${unameOut}"; exit 0;;
