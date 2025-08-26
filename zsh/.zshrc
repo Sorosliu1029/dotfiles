@@ -11,6 +11,8 @@ if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   elif [[ $machine == "Mac" ]]; then
       eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ $machine == "Pace" ]]; then
+      eval "$(~/.homebrew/bin/brew shellenv)"
   fi
 fi
 
@@ -27,8 +29,11 @@ fi
 # Set name of the theme to load. Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded.
 # recommended themes:fino, strung, agnoster, spaceship
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
+if [[ $machine == "Pace" ]]; then
+  ZSH_THEME="powerlevel10k/powerlevel10k"
+else
+  source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
+fi
 
 # p10k: To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 [[ -f $HOME/.p10k.zsh ]] && source "$HOME/.p10k.zsh"
@@ -78,11 +83,14 @@ plugins=(
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
 
-
 source "$ZSH/oh-my-zsh.sh"
 
 # Manually set language environment
-export LANG=en_US.UTF-8
+if [[ $machine == "Pace" ]]; then
+  export LANG=C
+else
+  export LANG=en_US.UTF-8
+fi
 export LC_ALL=$LANG
 export LC_CTYPE=$LANG
 
@@ -142,4 +150,9 @@ if [[ $machine == "Linux" ]]; then
     export PATH="/usr/local/cuda/bin:$PATH"
 fi
 # Cuda end
+
+if [[ $machine == "Pace" ]]; then
+  export PERL5LIB=$HOMEBREW_PREFIX/lib/perl5/
+  export PATH="$HOME/.nvim/bin:$HOME/.local/bin:$PATH"
+fi
 
