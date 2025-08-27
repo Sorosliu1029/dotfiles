@@ -78,6 +78,7 @@ return {
             extra_args = { "-i", shiftwidth, "-ci" },
           }), -- shell
           null_ls.builtins.formatting.yamlfmt, -- yaml
+          null_ls.builtins.formatting.sql_formatter, -- sql
 
           -- Diagnostic
           --

@@ -122,6 +122,7 @@ fi
 # Homebrew settings
 export HOMEBREW_NO_ENV_HINTS=true
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_UPDATE_REPORT_NEW=true
 export HOMEBREW_NO_UPDATE_REPORT_FORMULAE=true
 export HOMEBREW_NO_UPDATE_REPORT_CASKS=true
 # Homebrew end
