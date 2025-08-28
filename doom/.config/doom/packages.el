@@ -47,3 +47,6 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
+
+;; DOOM Emacs theme: catppuccin. ref: https://github.com/catppuccin/emacs?tab=readme-ov-file#doom-emacs
+(package! catppuccin-theme)

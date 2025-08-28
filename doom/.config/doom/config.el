@@ -76,3 +76,8 @@
 ;; Maximize window when launch
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
 ;; (add-hook 'window-setup-hook #'toggle-frame-fullscreen) ;; or full-screen
+
+;; set catppuccin theme
+(setq doom-theme 'catppuccin)
+(setq catppuccin-flavor 'latte) ;; or 'frappe, 'latte, 'macchiato, or 'mocha
+(catppuccin-reload)
