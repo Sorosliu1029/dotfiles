@@ -30,6 +30,9 @@ node_modules/
 # latex
 *.aux
 *.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
 
 # nfs
 .nfs*
