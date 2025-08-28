@@ -86,11 +86,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
 source "$ZSH/oh-my-zsh.sh"
 
 # Manually set language environment
-if [[ $machine == "Pace" ]]; then
-  export LANG=C
-else
-  export LANG=en_US.UTF-8
-fi
+export LANG=en_US.UTF-8
 export LC_ALL=$LANG
 export LC_CTYPE=$LANG
 
@@ -152,8 +148,12 @@ if [[ $machine == "Linux" ]]; then
 fi
 # Cuda end
 
+# settings for PACE machine in GT
 if [[ $machine == "Pace" ]]; then
   export PERL5LIB=$HOMEBREW_PREFIX/lib/perl5/
   export PATH="$HOME/.nvim/bin:$HOME/.local/bin:$PATH"
+  export SHELL="/bin/zsh"
+  # load cuda and set gcc version
+  module load cuda gcc/12.3.0
 fi
 
