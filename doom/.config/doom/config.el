@@ -80,4 +80,3 @@
 ;; set catppuccin theme
 (setq doom-theme 'catppuccin)
 (setq catppuccin-flavor 'latte) ;; or 'frappe, 'latte, 'macchiato, or 'mocha
-(catppuccin-reload)
