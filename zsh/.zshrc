@@ -78,6 +78,7 @@ plugins=(
   fzf
   asdf
   eza
+  zsh-vi-mode
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
 # Configuration for zsh-autosuggestions
@@ -97,7 +98,7 @@ export EDITOR='nvim'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # vim style key binding
-bindkey -v
+# bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
@@ -157,3 +158,5 @@ if [[ $machine == "Pace" ]]; then
   module load cuda gcc/12.3.0
 fi
 
+
+# source /Users/soros/.config/broot/launcher/bash/br
