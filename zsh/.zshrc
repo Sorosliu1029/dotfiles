@@ -83,6 +83,8 @@ plugins=(
 )
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
+# Configuration for zsh-vi-mode
+zvm_after_init_commands+=("[ -f $ZSH/plugins/fzf/fzf.plugin.zsh ] && source $ZSH/plugins/fzf/fzf.plugin.zsh")
 
 source "$ZSH/oh-my-zsh.sh"
 
