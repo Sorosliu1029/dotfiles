@@ -78,13 +78,10 @@ plugins=(
   fzf
   asdf
   eza
-  zsh-vi-mode
   zsh-syntax-highlighting # zsh-syntax-highlighting MUST be the last plugin
 )
 # Configuration for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan"
-# Configuration for zsh-vi-mode
-zvm_after_init_commands+=("[ -f $ZSH/plugins/fzf/fzf.plugin.zsh ] && source $ZSH/plugins/fzf/fzf.plugin.zsh")
 
 source "$ZSH/oh-my-zsh.sh"
 
@@ -100,7 +97,7 @@ export EDITOR='nvim'
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # vim style key binding
-# bindkey -v
+bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 

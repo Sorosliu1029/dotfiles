@@ -1772,6 +1772,9 @@
   }
 
   function prompt_srun_remaining() {
+    if ((!$+commands[squeue])); then
+      return
+    fi
     local jobs=$(squeue -u "$(whoami)" | tail -n +2 | awk '{print $1}' | squeue -O TimeLeft -j | tail -n +2 | xargs)
     if [[ -z $jobs ]]; then
       return
