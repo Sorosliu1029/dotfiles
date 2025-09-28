@@ -34,6 +34,9 @@ node_modules/
 *.fdb_latexmk
 *.fls
 *.synctex.gz
+*.blg
+*.bbl
+*.toc
 
 # nfs
 .nfs*

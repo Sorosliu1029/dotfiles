@@ -4,5 +4,6 @@ return {
   opts = {
     minimumBufferNum = 10,
     notificationOnAutoClose = false,
+    ignoredFiletypes = { "tex" },
   },
 }
