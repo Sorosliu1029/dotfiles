@@ -82,7 +82,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin" },
     opts = function()
       return {
-        highlights = require("catppuccin.groups.integrations.bufferline").get_theme(),
+        highlights = require("catppuccin.special.bufferline").get_theme(),
         options = {
           separator_style = "padded_slant",
           offsets = {
