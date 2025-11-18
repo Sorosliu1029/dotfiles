@@ -37,6 +37,8 @@ node_modules/
 *.blg
 *.bbl
 *.toc
+*.loc
+*.soc
 
 # nfs
 .nfs*
