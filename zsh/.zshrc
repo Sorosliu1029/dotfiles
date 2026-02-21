@@ -128,6 +128,8 @@ if [[ $machine == "Linux" ]]; then
     eval "$('/home/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 elif [[ $machine == "Mac" ]]; then
   eval "$(conda "shell.$(basename "${SHELL}")" hook)"
+elif [[ $machine == "Pace" ]]; then
+  module load anaconda3
 fi
 # conda end
 
