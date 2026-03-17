@@ -1,5 +1,5 @@
 {
-  "Non-ASCII Anti Aliased" : true,
+  "Close Sessions On End" : true,
   "HotKey Modifier Flags" : 1048576,
   "Ansi 15 Color (Dark)" : {
     "Red Component" : 0.99215686274509807,
@@ -7,12 +7,7 @@
     "Blue Component" : 0.8901960784313725,
     "Green Component" : 0.96470588235294119
   },
-  "Foreground Color (Dark)" : {
-    "Red Component" : 0.51372549019607838,
-    "Color Space" : "sRGB",
-    "Blue Component" : 0.58823529411764708,
-    "Green Component" : 0.58039215686274515
-  },
+  "Non-ASCII Anti Aliased" : true,
   "Cursor Text Color" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -58,7 +53,7 @@
     "Blue Component" : 0.21176470588235294,
     "Green Component" : 0.16862745098039217
   },
-  "Guid" : "72DA0899-E587-4EA8-AE7D-00638D77087B",
+  "Guid" : "D4E86129-D05B-492D-A977-232D63CD0A9C",
   "Cursor Color (Dark)" : {
     "Red Component" : 0.51372549019607838,
     "Color Space" : "sRGB",
@@ -66,6 +61,7 @@
     "Green Component" : 0.58039215686274515
   },
   "HotKey Window AutoHides" : true,
+  "Initial Text" : "",
   "Selection Color (Dark)" : {
     "Red Component" : 0.027450980392156862,
     "Color Space" : "sRGB",
@@ -188,6 +184,7 @@
     "Green Component" : 0.63137254901960782
   },
   "Use Cursor Guide (Dark)" : false,
+  "AWDS Window Option" : "No",
   "Visual Bell" : false,
   "Link Color (Light)" : {
     "Red Component" : 0,
@@ -258,7 +255,7 @@
     "telnet"
   ],
   "Use Non-ASCII Font" : true,
-  "Custom Directory" : "Yes",
+  "Custom Directory" : "No",
   "Use Selected Text Color (Light)" : true,
   "Bold Color (Light)" : {
     "Red Component" : 0.34509803921568627,
@@ -284,6 +281,7 @@
   "HotKey Alternate Shortcuts" : [
 
   ],
+  "AWDS Pane Directory" : "",
   "Ansi 14 Color" : {
     "Red Component" : 0.16078431904315948,
     "Color Space" : "sRGB",
@@ -328,6 +326,9 @@
     "Green Component" : 0.96470588235294119
   },
   "HotKey Characters Ignoring Modifiers" : ".",
+  "AWDS Tab Directory" : "",
+  "Sync Title" : false,
+  "AWDS Window Directory" : "~\/Desktop",
   "Ansi 11 Color" : {
     "Red Component" : 0.96078431606292725,
     "Color Space" : "sRGB",
@@ -335,7 +336,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0.96078431606292725
   },
-  "Sync Title" : false,
   "Ansi 8 Color (Dark)" : {
     "Red Component" : 0,
     "Color Space" : "sRGB",
@@ -548,6 +548,7 @@
     "Blue Component" : 0.51372549019607838,
     "Green Component" : 0.4823529411764706
   },
+  "AWDS Tab Option" : "No",
   "Ansi 4 Color" : {
     "Green Component" : 0.47060000000000002,
     "Blue Component" : 0.83140000000000003,
@@ -601,6 +602,7 @@
     "Red Component" : 0.96860000000000002
   },
   "Faint Text Alpha (Light)" : 0.5,
+  "AWDS Pane Option" : "No",
   "Ambiguous Double Width" : false,
   "Selected Text Color" : {
     "Red Component" : 0.87843137979507446,
@@ -615,10 +617,15 @@
     "Blue Component" : 0.58823529411764708,
     "Green Component" : 0.58039215686274515
   },
-  "Close Sessions On End" : true,
   "Ansi 0 Color" : {
     "Green Component" : 0.15290000000000001,
     "Blue Component" : 0.15290000000000001,
     "Red Component" : 0.15290000000000001
+  },
+  "Foreground Color (Dark)" : {
+    "Red Component" : 0.51372549019607838,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0.58823529411764708,
+    "Green Component" : 0.58039215686274515
   }
 }

@@ -22,7 +22,7 @@ return {
 
       return {
         options = {
-          theme = "catppuccin",
+          theme = "catppuccin-nvim",
           disabled_filetypes = {
             winbar = { "dap-repl" },
           },
