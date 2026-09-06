@@ -1,3 +1,4 @@
+# Figure out which machine
 unameOut="$(uname -a)"
 case "${unameOut}" in
   *pace.gatech.edu*) machine=Pace;;
@@ -6,6 +7,7 @@ case "${unameOut}" in
   *)          echo "Unknown Machine:${unameOut}"; exit 0;;
 esac
 
+# Setup Homebrew
 if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
   if [[ $machine == "Linux" ]]; then
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -15,6 +17,12 @@ if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
       eval "$(~/.homebrew/bin/brew shellenv)"
   fi
 fi
+export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_UPDATE_REPORT_NEW=true
+export HOMEBREW_NO_UPDATE_REPORT_FORMULAE=true
+export HOMEBREW_NO_UPDATE_REPORT_CASKS=true
+# Homebrew end
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -115,14 +123,6 @@ if [[ -L $HOME/.zshrc ]]; then
   unset __p __d
 fi
 
-# Homebrew settings
-export HOMEBREW_NO_ENV_HINTS=true
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_UPDATE_REPORT_NEW=true
-export HOMEBREW_NO_UPDATE_REPORT_FORMULAE=true
-export HOMEBREW_NO_UPDATE_REPORT_CASKS=true
-# Homebrew end
-
 # conda initialize
 if [[ $machine == "Linux" ]]; then
     eval "$('/home/soros/.miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -158,6 +158,5 @@ if [[ $machine == "Pace" ]]; then
   # load cuda and set gcc version
   module load cuda gcc/12.3.0
 fi
-
 
 # source /Users/soros/.config/broot/launcher/bash/br
