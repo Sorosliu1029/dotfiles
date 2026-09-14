@@ -1,20 +1,9 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = require("configs.treesitter.parsers"),
-        auto_install = true,
-        sync_install = false,
-        highlight = {
-          enable = true,
-          disable = { "latex" },
-          additional_vim_regex_highlighting = { "latex", "markdown" },
-        },
-        indent = { enable = true },
-      })
-    end,
   },
   -- shows the context of the currently visible buffer contents
   {
@@ -23,29 +12,40 @@ return {
   -- Syntax aware text-objects
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        textobjects = {
-          select = {
-            enable = true,
-            -- Automatically jump forward to textobj, similar to targets.vim
-            lookahead = true,
-            keymaps = {
-              -- Your custom capture.
-              -- ["aF"] = "@custom_capture",
+    branch = "main",
+    init = function()
+      -- Disable entire built-in ftplugin mappings to avoid conflicts.
+      -- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+      vim.g.no_plugin_maps = true
 
-              -- Built-in captures.
-              ["af"] = { query = "@function.outer", desc = "Select outer part of a function region" },
-              ["if"] = { query = "@function.inner", desc = "Select inner part of a function region" },
-              ["ac"] = { query = "@class.outer", desc = "Select outer part of a class region" },
-              ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-            },
-          },
+      -- Or, disable per filetype (add as you like)
+      -- vim.g.no_python_maps = true
+      -- vim.g.no_ruby_maps = true
+      -- vim.g.no_rust_maps = true
+      -- vim.g.no_go_maps = true
+    end,
+    config = function()
+      require("nvim-treesitter-textobjects").setup({
+        select = {
+          enable = true,
+          -- Automatically jump forward to textobj, similar to targets.vim
+          lookahead = true,
         },
       })
+      -- keymaps
+      -- You can use the capture groups defined in `textobjects.scm`
+      vim.keymap.set({ "x", "o" }, "af", function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@function.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "if", function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@function.inner", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ac", function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@class.outer", "textobjects")
+      end)
+      vim.keymap.set({ "x", "o" }, "ic", function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@class.inner", "textobjects")
+      end)
     end,
   },
 }
