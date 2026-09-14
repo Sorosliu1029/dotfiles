@@ -4,6 +4,9 @@ return {
     branch = "main",
     lazy = false,
     build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter").install(require("configs.treesitter.parsers"))
+    end,
   },
   -- shows the context of the currently visible buffer contents
   {
