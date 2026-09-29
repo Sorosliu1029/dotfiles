@@ -159,4 +159,7 @@ if [[ $machine == "Pace" ]]; then
   module load cuda gcc/12.3.0
 fi
 
+if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
 # source /Users/soros/.config/broot/launcher/bash/br
