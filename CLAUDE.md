@@ -15,7 +15,7 @@ Stow **folds** trees: `~/.config/nvim` is a single symlink to the repo dir, so a
 
 ## Not stow packages
 
-Some dirs hold files that are imported/applied by hand, never stowed: `homebrew/` (Brewfiles + install scripts), `apt/`, `iterm2/`, `raycast/`, `eudic/`, `ublock/`, `vimium/`, `wifi-location-changer/` (own installer + README), `systemd/` (Linux unit files, copied into `/etc/systemd` or `~/.config/systemd`), `machine-spec/`, `cntlm/`, `pip/`, `asdf/`. `setup.sh` bootstraps a fresh machine (Homebrew, oh-my-zsh, tpm, Brewfile); it is not idempotent.
+Some dirs hold files that are imported/applied by hand, never stowed: `homebrew/` (Brewfiles + install scripts), `apt/`, `iterm2/`, `raycast/`, `eudic/`, `ublock/`, `vimium/`, `wifi-location-changer/` (own installer + README), `systemd/` (Linux unit files, copied into `/etc/systemd` or `~/.config/systemd`), `machine-spec/`, `pip/`, `asdf/`. `setup.sh` bootstraps a machine (Homebrew, Brewfile, both `stow.sh`, oh-my-zsh, tpm); keep it idempotent: each step checks before acting.
 
 ## Ignore rules
 
