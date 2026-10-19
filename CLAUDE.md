@@ -20,11 +20,11 @@ Some dirs hold files that are imported/applied by hand, never stowed: `homebrew/
 ## Ignore rules
 
 - `stow/.stow-global-ignore` (itself stowed to `~`) — patterns stow skips in every package (`LICENSE`, `.gitignore`, `.DS_Store`, ...).
-- `<pkg>/.stow-local-ignore` — per-package; **replaces** the global list for that package, so it must repeat any global pattern still needed. E.g. `zsh/` keeps `linux.zsh` out of `~` (nothing sources it automatically), `conda/` keeps `jupyter.env.yml` out.
+- `<pkg>/.stow-local-ignore` — per-package; **replaces** the global list for that package, so it must repeat any global pattern still needed. E.g. `zsh/` keeps `linux.zsh` out of `~` (`.zshrc` resolves its own symlink and sources `<os>.zsh` from the repo), `conda/` keeps `jupyter.env.yml` out.
 
 ## Secrets live elsewhere
 
-Machine-specific and secret config lives in a separate private repo at `~/.dotfiles_private` (own `stow.sh`; provides `~/.gitconfig_local`, `~/.npmrc`, `~/.pypirc`, ssh, etc.). `git/.gitconfig` pulls identity via `[include] path = ~/.gitconfig_local`. Keep tokens, hostnames, and personal identifiers in that private repo; this one is public.
+Machine-specific and secret config lives in a separate private repo at `~/.dotfiles_private` (own `stow.sh`; provides `~/.gitconfig_local`, `~/.npmrc`, `~/.pypirc`, ssh, etc.). `git/.gitconfig` pulls identity via `[include] path = ~/.gitconfig_local`. Both repos stow a `gh` package into `~/.config/gh` (`config.yml` here, `hosts.yml` there), so `gh` is stowed with `--no-folding` in each and must stay that way. Keep tokens, hostnames, and personal identifiers in that private repo; this one is public.
 
 ## Cross-platform
 
