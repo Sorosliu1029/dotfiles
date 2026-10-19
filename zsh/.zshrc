@@ -162,4 +162,11 @@ fi
 if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
+
+# Broot
 # source /Users/soros/.config/broot/launcher/bash/br
+# Broot end
+
+# Claude Code setting
+export DISABLE_TELEMETRY=1
+# Claude Code end
