@@ -140,8 +140,8 @@ fi
 # DOOM emacs
 if [[ $machine == "Mac" ]] && [[ ":$PATH:" != *":$HOME/.emacs.d/bin:"* ]]; then
   export PATH="$HOME/.emacs.d/bin:$PATH"
+  alias emacs="emacsclient --alternate-editor=\"\" -t"
 fi
-alias emacs="emacsclient --alternate-editor=\"\" -t"
 # DOOM emacs end
 
 # Cuda
