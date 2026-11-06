@@ -63,7 +63,7 @@
   "HotKey Window AutoHides" : true,
   "Initial Text" : "",
   "Selection Color (Dark)" : {
-    "Red Component" : 0.027450980392156862,
+    "Red Component" : 0.027450980392156866,
     "Color Space" : "sRGB",
     "Blue Component" : 0.25882352941176473,
     "Green Component" : 0.21176470588235294
@@ -79,7 +79,7 @@
     "Green Component" : 0.1491314172744751
   },
   "Ansi 0 Color (Dark)" : {
-    "Red Component" : 0.027450980392156862,
+    "Red Component" : 0.027450980392156866,
     "Color Space" : "sRGB",
     "Blue Component" : 0.25882352941176473,
     "Green Component" : 0.21176470588235294
@@ -133,8 +133,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.23921568691730499
   },
-  "Terminal Type" : "xterm-256color",
+  "Non-ASCII Ligatures" : false,
   "Show Status Bar" : false,
+  "Terminal Type" : "xterm-256color",
   "Allow Paste Bracketing" : false,
   "Cursor Boost (Dark)" : 0,
   "Right Option Key Sends" : 0,
@@ -168,7 +169,7 @@
   },
   "Screen" : 0,
   "Cursor Text Color (Dark)" : {
-    "Red Component" : 0.027450980392156862,
+    "Red Component" : 0.027450980392156866,
     "Color Space" : "sRGB",
     "Blue Component" : 0.25882352941176473,
     "Green Component" : 0.21176470588235294
@@ -221,7 +222,7 @@
   "Ansi 9 Color (Dark)" : {
     "Red Component" : 0.79607843137254897,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.086274509803921567,
+    "Blue Component" : 0.086274509803921581,
     "Green Component" : 0.29411764705882354
   },
   "Badge Color (Light)" : {
@@ -312,7 +313,9 @@
     "Blue Component" : 0.59607843137254901,
     "Green Component" : 0.63137254901960782
   },
+  "Use Tab Color" : false,
   "Use Bright Bold (Light)" : true,
+  "Blink Allowed" : false,
   "Cursor Color (Light)" : {
     "Red Component" : 0.396078431372549,
     "Color Space" : "sRGB",
@@ -358,7 +361,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.80000001192092896
   },
-  "Special Font Config" : "{\"entries\":[{\"start\":60000,\"count\":396,\"fontName\":\"codicon\"}],\"version\":1}",
+  "Special Font Config" : "{\"entries\":[],\"version\":1}",
   "Match Background Color (Light)" : {
     "Red Component" : 0.99697142839431763,
     "Color Space" : "P3",
@@ -459,7 +462,7 @@
   },
   "Load Shell Integration Automatically" : true,
   "Ansi 0 Color (Light)" : {
-    "Red Component" : 0.027450980392156862,
+    "Red Component" : 0.027450980392156866,
     "Color Space" : "sRGB",
     "Blue Component" : 0.25882352941176473,
     "Green Component" : 0.21176470588235294
@@ -515,7 +518,7 @@
   "Ansi 9 Color (Light)" : {
     "Red Component" : 0.79607843137254897,
     "Color Space" : "sRGB",
-    "Blue Component" : 0.086274509803921567,
+    "Blue Component" : 0.086274509803921581,
     "Green Component" : 0.29411764705882354
   },
   "Ansi 12 Color" : {
